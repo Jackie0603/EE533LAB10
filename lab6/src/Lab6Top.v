@@ -1,4 +1,3 @@
-
 module Lab6Top #(
     parameter IM_DEPTH = 9,
     parameter I_WIDTH = 32,
@@ -6,7 +5,7 @@ module Lab6Top #(
 )
 (
     input clk, rst,
-    input[7:0] addr_in,
+    input [7:0] addr_in,
     input flag,
     output [31:0] data_hi, data_low
 );
@@ -96,7 +95,13 @@ DFFR #(.DW(3)) dff_S23_4 (.clk(clk), .rst(rst), .D(WReg_Stg2), .Q(WReg_Stg3) );
 //--------------
 // a = read port     b = write port
 wire [D_WIDTH-1:0] Mem_out_Stg3;
-D_Mem u_DMem (.addra(rdata1_Stg3),.addrb(rdata2_Stg3),.clka(clk),.clkb(clk),
+wire [7:0] dmem_addra;
+wire [7:0] dmem_douta;
+
+assign dmem_addra = flag ? addr_in : rdata1_Stg3[7:0];
+assign {data_hi, data_low} = flag ? Mem_out_Stg3 : 64'hDEADDEAD;
+
+D_Mem u_DMem (.addra(dmem_addra),.addrb(rdata2_Stg3[7:0]),.clka(clk),.clkb(clk),
               .dinb(rdata2_Stg3),.douta(Mem_out_Stg3),.web(WMemEn_Stg3)
               ,.rst(rst));
 

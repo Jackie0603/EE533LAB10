@@ -59,6 +59,7 @@ module ids
    wire [DATA_WIDTH-1:0]         in_fifo_data;
    wire [CTRL_WIDTH-1:0]         in_fifo_ctrl;
 
+
    wire                          in_fifo_nearly_full;
    wire                          in_fifo_empty;
 
@@ -69,6 +70,7 @@ module ids
    wire [31:0]                   pattern_high;
    wire [31:0]                   pattern_low;
    wire [31:0]                   ids_cmd;
+   wire [31:0]                   lab6_addr;
    // hardware registers
    reg [31:0]                    matches;
    reg [31:0]                    check_high;
@@ -88,6 +90,11 @@ module ids
    parameter                     HEADER = 2'b01;
    parameter                     PAYLOAD = 2'b10;
 
+   // core signal
+   wire [1:0] core_state;  // 2-bit core state input
+   reg rst;               // Core Reset signal
+   reg flag; 
+
  
    //------------------------- Local assignments -------------------------------
 
@@ -95,8 +102,19 @@ module ids
    assign matcher_en = in_pkt_body;
    assign matcher_ce = (!in_fifo_empty && out_rdy);
    assign matcher_reset = (reset || ids_cmd[0] || end_of_pkt);
+   assign core_state = lab6_addr[9:8];
 
    //------------------------- Modules-------------------------------
+
+
+   Lab6Top Lab6Core (
+      .clk              (clk),  
+      .rst              (core_rst),    
+      .addr_in          (lab6_addr[7:0]), // address_in
+      .flag             (flag), 
+      .data_hi          (check_high), //data_out
+      .data_low         (check_low)   //data_out
+   );
 
    fallthrough_small_fifo #(
       .WIDTH(CTRL_WIDTH+DATA_WIDTH),
@@ -143,7 +161,7 @@ module ids
       .TAG                 (`CORE_BLOCK_ADDR),          // Tag -- eg. MODULE_TAG
       .REG_ADDR_WIDTH      (`CORE_REG_ADDR_WIDTH),     // Width of block addresses -- eg. MODULE_REG_ADDR_WIDTH
       .NUM_COUNTERS        (0),                 // Number of counters
-      .NUM_SOFTWARE_REGS   (3),                 // Number of sw regs
+      .NUM_SOFTWARE_REGS   (4),                 // Number of sw regs
       .NUM_HARDWARE_REGS   (3)                  // Number of hw regs
    ) module_regs (
       .reg_req_in       (reg_req_in),
@@ -165,17 +183,37 @@ module ids
       .counter_decrement(),
 
       // --- SW regs interface
-      .software_regs    ({ids_cmd,pattern_low,pattern_high}),
+      .software_regs    ({ids_cmd,pattern_low,pattern_high,lab6_addr}),
 
       // --- HW regs interface
-      .hardware_regs    (matches),
+      .hardware_regs    ({matches,check_high,check_low}),
 
       .clk              (clk),
       .reset            (reset)
     );
 
    //------------------------- Logic-------------------------------
-   
+   always @(*) begin
+    case (core_state)
+        2'b00: begin
+            core_rst = 1;
+            flag = 0;  // Default value to avoid latches
+        end
+        2'b01: begin
+            core_rst = 0;
+            flag = 0;
+        end
+        2'b10: begin
+            core_rst = 0;
+            flag = 1;
+        end
+        default: begin
+            core_rst = 1;
+            flag = 0;  // Default case for undefined states
+        end
+    endcase
+    end
+
    always @(*) begin
       state_next = state;
       matches_next = matches;

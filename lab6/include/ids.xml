@@ -21,9 +21,24 @@
 			<nf:description>Command Register</nf:description>
 			<nf:type>generic_software32</nf:type>
 		</nf:register>
-        	<nf:register>
+    <nf:register>
+		  <nf:name>lab6_addr</nf:name>
+			<nf:description>Input Address</nf:description>
+			<nf:type>generic_software32</nf:type>
+		</nf:register>
+    <nf:register>
 		  <nf:name>matches</nf:name>
 			<nf:description>Match Count Register</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+    <nf:register>
+		  <nf:name>check_high</nf:name>
+			<nf:description>Output Data HIGH</nf:description>
+			<nf:type>generic_hardware32</nf:type>
+		</nf:register>
+    <nf:register>
+		  <nf:name>check_low</nf:name>
+			<nf:description>Output Data LOW</nf:description>
 			<nf:type>generic_hardware32</nf:type>
 		</nf:register>
 	</nf:registers>
