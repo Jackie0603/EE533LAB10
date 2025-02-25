@@ -23,6 +23,7 @@ if(rst) begin
         D_bram[i] <= 64'd0;  
     end    
     D_bram[0] <= 64'd4; 
+    D_bram[4] <= 64'd100;
 end
 else if(web) begin
     D_bram[addrb] <= dinb;

@@ -92,7 +92,9 @@ module ids
 
    // core signal
    wire [1:0] core_state;  // 2-bit core state input
-   reg rst;               // Core Reset signal
+   wire [31:0] core_out_hi;
+   wire [31:0] core_out_low;
+   reg core_rst;               // Core Reset signal
    reg flag; 
 
  
@@ -112,8 +114,8 @@ module ids
       .rst              (core_rst),    
       .addr_in          (lab6_addr[7:0]), // address_in
       .flag             (flag), 
-      .data_hi          (check_high), //data_out
-      .data_low         (check_low)   //data_out
+      .data_hi          (core_out_hi), //data_out
+      .data_low         (core_out_low)   //data_out
    );
 
    fallthrough_small_fifo #(
@@ -206,6 +208,8 @@ module ids
         2'b10: begin
             core_rst = 0;
             flag = 1;
+            check_high = core_out_hi;
+            check_low = core_out_low;
         end
         default: begin
             core_rst = 1;

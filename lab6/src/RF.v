@@ -7,11 +7,11 @@ module RF #(
 (
     input clk, rst,
 
-    input [$clog2(RFDEPTH)-1:0] raddr1, raddr2,
+    input [1:0] raddr1, raddr2,
     output wire [DATAWIDTH-1:0] rdata1, rdata2,
 
     input wen,
-    input wire [$clog2(RFDEPTH)-1:0] waddr,
+    input wire [1:0] waddr,
     input wire [DATAWIDTH-1:0] wdata
 );
 
