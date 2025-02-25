@@ -9,18 +9,12 @@ module I_Mem(
 
 reg [31:0] I_bram [511:0];
 
-integer i;
 always@(posedge clk or posedge rst)begin
 if(rst) begin
-    for (i = 0; i < 256; i = i + 1) begin
-        I_bram[i] <= 32'h0;  
-    end    
+    I_bram <= '{default: 32'h0}; // Initialize entire memory to zero
     I_bram[0] <= 32'h00000202;
     I_bram[1] <= 32'h00000203;
-    I_bram[5] <= 32'h00000498;    
-    for (i = 256; i < 512; i = i + 1) begin
-        I_bram[i] <= 32'h0;  
-    end    
+    I_bram[5] <= 32'h00000498;
 end
 end
 
@@ -30,8 +24,5 @@ if(rst)
 else
     dout <= I_bram[addr];
 end
-
- 
-
 
 endmodule
