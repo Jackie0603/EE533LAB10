@@ -37,8 +37,8 @@
 			<nf:description>Match Count Register</nf:description>
 			<nf:type>generic_hardware32</nf:type>
 		</nf:register>
-		</nf:register>
-        	<nf:register>
+
+        <nf:register>
 		  <nf:name>check_high</nf:name>
 			<nf:description>Output Data High</nf:description>
 			<nf:type>generic_hardware32</nf:type>
