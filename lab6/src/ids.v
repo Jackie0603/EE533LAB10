@@ -70,7 +70,6 @@ module ids
    wire [31:0]                   pattern_low;
    wire [31:0]                   ids_cmd;
    wire [31:0]                   lab6_addr;
-   wire [31:0]                   flag;
    // hardware registers
    reg [31:0]                    matches;
    reg [31:0]                    check_high;
@@ -90,6 +89,12 @@ module ids
    parameter                     HEADER = 2'b01;
    parameter                     PAYLOAD = 2'b10;
 
+   // core signal
+   wire [1:0] core_state;
+   wire [31:0] core_out_hi;
+   wire [31:0] core_out_low;
+   reg core_rst;
+   reg flag;
  
    //------------------------- Local assignments -------------------------------
 
@@ -97,16 +102,17 @@ module ids
    assign matcher_en = in_pkt_body;
    assign matcher_ce = (!in_fifo_empty && out_rdy);
    assign matcher_reset = (reset || ids_cmd[0] || end_of_pkt);
+   assign core_state = lab6_addr[9:8];
 
    //------------------------- Modules-------------------------------
 
    processor CORE (
-      .clk       (clk),
-      .rst       (reset),
+      .CLK       (clk),
+      .RST       (core_rst),
       .addr_in   (lab6_addr[31:0]),
-      .flag      (flag[0]),
-      .data_hi   (check_high),
-      .data_low  (check_low)
+      .flag      (flag),
+      .data_hi   (core_out_hi),
+      .data_low  (core_out_low)
    );
 
    fallthrough_small_fifo #(
@@ -176,7 +182,7 @@ module ids
       .counter_decrement(),
 
       // --- SW regs interface
-      .software_regs    ({ids_cmd,pattern_low,pattern_high, lab6_addr, flag}),
+      .software_regs    ({ids_cmd,pattern_low,pattern_high, lab6_addr}),
 
       // --- HW regs interface
       .hardware_regs    ({matches, check_high, check_low}),
@@ -186,6 +192,28 @@ module ids
     );
 
    //------------------------- Logic-------------------------------
+   always @ (*) begin
+      case (core_state)
+         2'b00: begin
+            core_rst = 1;
+            flag = 0;
+         end
+         2'b01: begin
+            core_rst = 0;
+            flag = 0;
+         end
+         2'b10: begin
+            core_rst = 0;
+            flag = 1;
+            check_high = core_out_hi;
+            check_low = core_out_low;
+         end
+         default: begin
+            core_rst = 1;
+            flag = 0;
+         end
+      endcase
+   end
    
    always @(*) begin
       state_next = state;

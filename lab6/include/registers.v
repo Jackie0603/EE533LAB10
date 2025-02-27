@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Module: registers.v
-// Project: Reference router (lab4)
+// Project: Reference router (lab6)
 // Description: Project specific register defines
 //
 //              Reference IPv4 router
@@ -16,7 +16,7 @@
 `define DEVICE_MAJOR       1
 `define DEVICE_MINOR       0
 `define DEVICE_REVISION    0
-`define DEVICE_PROJ_DIR    "lab4"
+`define DEVICE_PROJ_DIR    "lab6"
 `define DEVICE_PROJ_NAME   "Reference router"
 `define DEVICE_PROJ_DESC   "Reference IPv4 router"
 
@@ -401,11 +401,14 @@
 
 // Name: ids
 // Description: Registers for IDS
-// File: projects/lab4/include/ids.xml
+// File: projects/lab6/include/ids.xml
 `define IDS_PATTERN_HIGH  4'h0
 `define IDS_PATTERN_LOW   4'h1
 `define IDS_IDS_CMD       4'h2
-`define IDS_MATCHES       4'h3
+`define IDS_LAB6_ADDR     4'h3
+`define IDS_MATCHES       4'h4
+`define IDS_CHECK_HIGH    4'h5
+`define IDS_CHECK_LOW     4'h6
 
 // Name: in_arb
 // Description: Round-robin input arbiter

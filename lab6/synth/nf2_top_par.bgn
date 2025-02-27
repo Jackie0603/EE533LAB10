@@ -4,7 +4,7 @@ Loading device for application Rf_Device from file '2vp50.nph' in environment
 /opt/Xilinx/10.1/ISE.
    "nf2_top" is an NCD, version 3.2, device xc2vp50, package ff1152, speed -7
 
-Fri Feb  7 00:05:25 2025
+Thu Feb 27 10:31:40 2025
 
 /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -g Binary:No -w nf2_top_par.ncd 
 
@@ -134,6 +134,10 @@ Summary of Bitgen Options:
  ** The specified setting matches the default setting.
 
 Running DRC.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   nf2_core/user_data_path/ids/Mrom_core_state_rom00001 is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:1060 - Dangling pins on
    block:<nf2_core/cpu_queues[0].cpu_dma_queue_i/cpu_dma_rx_queue/cpu_fifos64.rx
    _fifo/BU2/U0/grf.rf/mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr
@@ -475,6 +479,14 @@ WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
 WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
    block:<nf2_core/user_data_path/output_queues/oq_regs/oq_reg_instances/oq_addr
    _lo_reg/ram/Mram_ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB28> on
+   block:<nf2_core/user_data_path/ids/CORE/XLXI_21/B6.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB29> on
+   block:<nf2_core/user_data_path/ids/CORE/XLXI_21/B6.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<nf2_core/user_data_path/ids/CORE/XLXI_21/B6.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<nf2_core/user_data_path/ids/CORE/XLXI_21/B6.B>:<RAMB16_RAMB16B>.
 WARNING:PhysDesignRules:812 - Dangling pin <DOA19> on
    block:<nf2_core/user_data_path/output_queues/oq_regs/oq_reg_instances/oq_rd_a
    ddr_reg/ram/Mram_ram.A>:<RAMB16_RAMB16A>.
@@ -788,7 +800,7 @@ WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
 WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
    block:<nf2_core/user_data_path/output_queues/oq_regs/oq_reg_instances/oq_addr
    _hi_reg/ram/Mram_ram.B>:<RAMB16_RAMB16B>.
-DRC detected 0 errors and 187 warnings.  Please see the previously displayed
+DRC detected 0 errors and 192 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
 Creating bit map...
 Saving bit stream in "nf2_top_par.bit".

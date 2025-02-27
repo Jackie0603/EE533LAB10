@@ -26,11 +26,6 @@
 			<nf:description>Lab 6 address</nf:description>
 			<nf:type>generic_software32</nf:type>
 		</nf:register>
-		<nf:register>
-		  <nf:name>flag</nf:name>
-			<nf:description>checking flag</nf:description>
-			<nf:type>generic_software32</nf:type>
-		</nf:register>
 
         <nf:register>
 		  <nf:name>matches</nf:name>
@@ -43,8 +38,8 @@
 			<nf:description>Output Data High</nf:description>
 			<nf:type>generic_hardware32</nf:type>
 		</nf:register>
-		</nf:register>
-        	<nf:register>
+
+        <nf:register>
 		  <nf:name>check_low</nf:name>
 			<nf:description>Output Data Low</nf:description>
 			<nf:type>generic_hardware32</nf:type>
