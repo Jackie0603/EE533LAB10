@@ -69,8 +69,12 @@ module ids
    wire [31:0]                   pattern_high;
    wire [31:0]                   pattern_low;
    wire [31:0]                   ids_cmd;
+   wire [31:0]                   lab6_addr;
+   wire [31:0]                   flag;
    // hardware registers
    reg [31:0]                    matches;
+   reg [31:0]                    check_high;
+   reg [31:0]                    check_low;
 
    // internal state
    reg [1:0]                     state, state_next;
@@ -95,6 +99,15 @@ module ids
    assign matcher_reset = (reset || ids_cmd[0] || end_of_pkt);
 
    //------------------------- Modules-------------------------------
+
+   processor CORE (
+      .clk       (clk),
+      .rst       (reset),
+      .addr_in   (lab6_addr[31:0]),
+      .flag      (flag[0]),
+      .data_hi   (check_high),
+      .data_low  (check_low)
+   );
 
    fallthrough_small_fifo #(
       .WIDTH(CTRL_WIDTH+DATA_WIDTH),
@@ -163,10 +176,10 @@ module ids
       .counter_decrement(),
 
       // --- SW regs interface
-      .software_regs    ({ids_cmd,pattern_low,pattern_high}),
+      .software_regs    ({ids_cmd,pattern_low,pattern_high, lab6_addr, flag}),
 
       // --- HW regs interface
-      .hardware_regs    (matches),
+      .hardware_regs    ({matches, check_high, check_low}),
 
       .clk              (clk),
       .reset            (reset)

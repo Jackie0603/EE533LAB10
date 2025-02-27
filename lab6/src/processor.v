@@ -133,10 +133,17 @@ endmodule
 `timescale 1ns / 1ps
 
 module processor(CLK, 
-                 RST);
+                 RST,
+                 addr_in,
+                 flag,
+                 data_hi,
+                 data_low);
 
     input CLK;
     input RST;
+    input [7:0] addr_in;
+    input flag;
+    output [31:0] data_hi, data_low;
    
    wire [8:0] imemaddr;
    wire [31:0] instr;
@@ -198,11 +205,24 @@ module processor(CLK,
                       .D(XLXN_88[63:0]), 
                       .RST(RST), 
                       .Q(R2_out_stg3[63:0]));
-   dmem XLXI_21 (.addr(R1_out_stg3[7:0]), 
+
+
+   wire [7:0] dmemaddr;
+
+   assign dmemaddr = (flag) ? addr_in[7:0] : R1_out_stg3[7:0];
+   assign {data_hi, data_low} = flag ? XLXN_96[63:0] : 64'hDEADBEEF;
+
+   dmem XLXI_21 (.addr(dmemaddr), 
                  .clk(CLK), 
                  .din(R2_out_stg3[63:0]), 
                  .we(WMemEn), 
                  .dout(XLXN_96[63:0]));
+
+   // dmem XLXI_21 (.addr(R1_out_stg3[7:0]), 
+   //               .clk(CLK), 
+   //               .din(R2_out_stg3[63:0]), 
+   //               .we(WMemEn), 
+   //               .dout(XLXN_96[63:0]));
    reg_64bit XLXI_22 (.CE(one), 
                       .CLK(CLK), 
                       .D(XLXN_96[63:0]), 
