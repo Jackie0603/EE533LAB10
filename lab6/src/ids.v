@@ -160,8 +160,8 @@ module ids
       .TAG                 (`CORE_BLOCK_ADDR),          // Tag -- eg. MODULE_TAG
       .REG_ADDR_WIDTH      (`CORE_REG_ADDR_WIDTH),     // Width of block addresses -- eg. MODULE_REG_ADDR_WIDTH
       .NUM_COUNTERS        (0),                 // Number of counters
-      .NUM_SOFTWARE_REGS   (3),                 // Number of sw regs
-      .NUM_HARDWARE_REGS   (1)                  // Number of hw regs
+      .NUM_SOFTWARE_REGS   (4),                 // Number of sw regs
+      .NUM_HARDWARE_REGS   (3)                  // Number of hw regs
    ) module_regs (
       .reg_req_in       (reg_req_in),
       .reg_ack_in       (reg_ack_in),
