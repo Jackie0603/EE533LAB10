@@ -5,7 +5,11 @@ use strict;
 my $IDS_PATTERN_HI_REG = 0x2000300;
 my $IDS_PATTERN_LO_REG = 0x2000304;
 my $IDS_COMMAND_REG = 0x2000308;
-my $IDS_MATCHES_REG = 0x200030c;
+
+# my $processor_lab6_addr_reg = 0x2000300;
+# my $processor_check         = 0x2000304;
+# my $processor_check_high    = 0x2000308;
+# my $processor_check_low     = 0x200030c;
 
 sub regwrite {
    my( $addr, $value ) = @_;

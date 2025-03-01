@@ -132,18 +132,49 @@ module FD16RE_MXILINX_processor(C,
 endmodule
 `timescale 1ns / 1ps
 
-module processor(CLK, 
-                 RST,
-                 addr_in,
-                 flag,
-                 data_hi,
-                 data_low);
+module processor
+#(
+   parameter DATA_WIDTH = 64,
+   parameter CTRL_WIDTH = DATA_WIDTH/8,
+   parameter UDP_REG_SRC_WIDTH = 2
+)
+(
+   input  [DATA_WIDTH-1:0]             in_data,
+   input  [CTRL_WIDTH-1:0]             in_ctrl,
+   input                               in_wr,
+   input                               in_rdy,
 
-    input CLK;
-    input RST;
-    input [7:0] addr_in;
-    input flag;
-    output [31:0] data_hi, data_low;
+   output [DATA_WIDTH-1:0]             out_data,
+   output [CTRL_WIDTH-1:0]             out_ctrl,
+   output                              out_wr,
+   output                              out_rdy,
+   
+   // --- Register interface
+   input                               reg_req_in,
+   input                               reg_ack_in,
+   input                               reg_rd_wr_L_in,
+   input  [`UDP_REG_ADDR_WIDTH-1:0]    reg_addr_in,
+   input  [`CPCI_NF2_DATA_WIDTH-1:0]   reg_data_in,
+   input  [UDP_REG_SRC_WIDTH-1:0]      reg_src_in,
+
+   output                              reg_req_out,
+   output                              reg_ack_out,
+   output                              reg_rd_wr_L_out,
+   output  [`UDP_REG_ADDR_WIDTH-1:0]   reg_addr_out,
+   output  [`CPCI_NF2_DATA_WIDTH-1:0]  reg_data_out,
+   output  [UDP_REG_SRC_WIDTH-1:0]     reg_src_out,
+
+   input CLK,
+   input RST
+);
+
+   // software registers
+   wire [31:0] lab6_addr;
+   wire [31:0] check;
+   
+   // hardware registers
+   wire [31:0] check_high;
+   wire [31:0] check_low;
    
    wire [8:0] imemaddr;
    wire [31:0] instr;
@@ -159,6 +190,11 @@ module processor(CLK,
    wire [63:0] XLXN_89;
    wire [63:0] XLXN_96;
    wire XLXN_111;
+
+   assign out_data = in_data;
+   assign out_ctrl = in_ctrl;
+   assign out_wr = in_wr;
+   assign in_rdy = out_rdy;
    
    Program_Counter XLXI_2 (.CLK(CLK), 
                            .RST(RST), 
@@ -209,8 +245,8 @@ module processor(CLK,
 
    wire [7:0] dmemaddr;
 
-   assign dmemaddr = (flag) ? addr_in[7:0] : R1_out_stg3[7:0];
-   assign {data_hi, data_low} = flag ? XLXN_96[63:0] : 64'hDEADBEEF;
+   assign dmemaddr = (check) ? lab6_addr[7:0] : R1_out_stg3[7:0];
+   assign {data_hi, data_low} = check ? XLXN_96[63:0] : 64'hDEADDEAD;
 
    dmem XLXI_21 (.addr(dmemaddr), 
                  .clk(CLK), 
@@ -241,4 +277,42 @@ module processor(CLK,
    imem XLXI_29 (.addr(imemaddr[8:0]), 
                  .clk(CLK), 
                  .dout(instr[31:0]));
+
+   generic_regs
+   #( 
+      .UDP_REG_SRC_WIDTH   (UDP_REG_SRC_WIDTH),
+      .TAG                 (`CORE_BLOCK_ADDR),          // Tag -- eg. MODULE_TAG
+      .REG_ADDR_WIDTH      (`CORE_REG_ADDR_WIDTH),     // Width of block addresses -- eg. MODULE_REG_ADDR_WIDTH
+      .NUM_COUNTERS        (0),                 // Number of counters
+      .NUM_SOFTWARE_REGS   (2),                 // Number of sw regs
+      .NUM_HARDWARE_REGS   (2)                  // Number of hw regs
+   ) module_regs (
+      .reg_req_in       (reg_req_in),
+      .reg_ack_in       (reg_ack_in),
+      .reg_rd_wr_L_in   (reg_rd_wr_L_in),
+      .reg_addr_in      (reg_addr_in),
+      .reg_data_in      (reg_data_in),
+      .reg_src_in       (reg_src_in),
+
+      .reg_req_out      (reg_req_out),
+      .reg_ack_out      (reg_ack_out),
+      .reg_rd_wr_L_out  (reg_rd_wr_L_out),
+      .reg_addr_out     (reg_addr_out),
+      .reg_data_out     (reg_data_out),
+      .reg_src_out      (reg_src_out),
+
+      // --- counters interface
+      .counter_updates  (),
+      .counter_decrement(),
+
+      // --- SW regs interface
+      .software_regs    ({lab6_addr, check}),
+
+      // --- HW regs interface
+      .hardware_regs    ({check_high, check_low}),
+
+      .clk              (CLK),
+      .reset            (RST)
+    );   
+   
 endmodule

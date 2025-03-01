@@ -211,18 +211,18 @@ module user_data_path
    wire [`CPCI_NF2_DATA_WIDTH-1:0]  op_lut_in_reg_data;
    wire [UDP_REG_SRC_WIDTH-1:0]     op_lut_in_reg_src;
 
-   //------- ids wires/regs ------
-   wire [CTRL_WIDTH-1:0]            ids_in_ctrl;
-   wire [DATA_WIDTH-1:0]            ids_in_data;
-   wire                             ids_in_wr;
-   wire                             ids_in_rdy;
+   //------- processor wires/regs ------
+   wire [CTRL_WIDTH-1:0]            processor_in_ctrl;
+   wire [DATA_WIDTH-1:0]            processor_in_data;
+   wire                             processor_in_wr;
+   wire                             processor_in_rdy;
 
-   wire                             ids_in_reg_req;
-   wire                             ids_in_reg_ack;
-   wire                             ids_in_reg_rd_wr_L;
-   wire [`UDP_REG_ADDR_WIDTH-1:0]   ids_in_reg_addr;
-   wire [`CPCI_NF2_DATA_WIDTH-1:0]  ids_in_reg_data;
-   wire [UDP_REG_SRC_WIDTH-1:0]     ids_in_reg_src;
+   wire                             processor_in_reg_req;
+   wire                             processor_in_reg_ack;
+   wire                             processor_in_reg_rd_wr_L;
+   wire [`UDP_REG_ADDR_WIDTH-1:0]   processor_in_reg_addr;
+   wire [`CPCI_NF2_DATA_WIDTH-1:0]  processor_in_reg_data;
+   wire [UDP_REG_SRC_WIDTH-1:0]     processor_in_reg_src;
 
    //------- output queues wires/regs ------
    wire [CTRL_WIDTH-1:0]            oq_in_ctrl;
@@ -330,10 +330,10 @@ module user_data_path
        .NUM_OUTPUT_QUEUES(NUM_OUTPUT_QUEUES),
        .NUM_IQ_BITS(NUM_IQ_BITS))
    output_port_lookup
-     (.out_data            (ids_in_data),
-     .out_ctrl             (ids_in_ctrl),
-     .out_wr               (ids_in_wr),
-     .out_rdy              (ids_in_rdy),
+     (.out_data            (processor_in_data),
+     .out_ctrl             (processor_in_ctrl),
+     .out_wr               (processor_in_wr),
+     .out_rdy              (processor_in_rdy),
                            
       // --- Interface to the rx input queues
      .in_data              (op_lut_in_data),
@@ -349,56 +349,91 @@ module user_data_path
      .reg_data_in          (op_lut_in_reg_data),
      .reg_src_in           (op_lut_in_reg_src),
 
-     .reg_req_out          (ids_in_reg_req),
-     .reg_ack_out          (ids_in_reg_ack),
-     .reg_rd_wr_L_out      (ids_in_reg_rd_wr_L),
-     .reg_addr_out         (ids_in_reg_addr),
-     .reg_data_out         (ids_in_reg_data),
-     .reg_src_out          (ids_in_reg_src),
+     .reg_req_out          (processor_in_reg_req),
+     .reg_ack_out          (processor_in_reg_ack),
+     .reg_rd_wr_L_out      (processor_in_reg_rd_wr_L),
+     .reg_addr_out         (processor_in_reg_addr),
+     .reg_data_out         (processor_in_reg_data),
+     .reg_src_out          (processor_in_reg_src),
 
       // --- Misc
      .clk                  (clk),
      .reset                (reset));
 
-   ids #(
-      .DATA_WIDTH(DATA_WIDTH),
-      .CTRL_WIDTH(CTRL_WIDTH),
-      .UDP_REG_SRC_WIDTH (UDP_REG_SRC_WIDTH)
-      // .INPUT_ARBITER_STAGE_NUM(IN_ARB_STAGE_NUM),
-      // .NUM_OUTPUT_QUEUES(NUM_OUTPUT_QUEUES),
-      // .NUM_IQ_BITS(NUM_IQ_BITS)
-   ) ids (
-      // --- data path interface
-      .out_data                          (oq_in_data),
-      .out_ctrl                          (oq_in_ctrl),
-      .out_wr                            (oq_in_wr),
-      .out_rdy                           (oq_in_rdy),
+     processor #(
+          .DATA_WIDTH(DATA_WIDTH),
+          .CTRL_WIDTH(CTRL_WIDTH),
+          .UDP_REG_SRC_WIDTH(UDP_REG_SRC_WIDTH)
+     ) processor (
+          // --- data path interface
+          .out_data                          (oq_in_data),
+          .out_ctrl                          (oq_in_ctrl),
+          .out_wr                            (oq_in_wr),
+          .out_rdy                           (oq_in_rdy),
 
-      .in_data                           (ids_in_data),
-      .in_ctrl                           (ids_in_ctrl),
-      .in_wr                             (ids_in_wr),
-      .in_rdy                            (ids_in_rdy),
+          .in_data                           (processor_in_data),
+          .in_ctrl                           (processor_in_ctrl),
+          .in_wr                             (processor_in_wr),
+          .in_rdy                            (processor_in_rdy),
 
-      // --- Register interface
-      .reg_req_in                        (ids_in_reg_req),
-      .reg_ack_in                        (ids_in_reg_ack),
-      .reg_rd_wr_L_in                    (ids_in_reg_rd_wr_L),
-      .reg_addr_in                       (ids_in_reg_addr),
-      .reg_data_in                       (ids_in_reg_data),
-      .reg_src_in                        (ids_in_reg_src),
+          // --- Register interface
+          .reg_req_in                        (processor_in_reg_req),
+          .reg_ack_in                        (processor_in_reg_ack),
+          .reg_rd_wr_L_in                    (processor_in_reg_rd_wr_L),
+          .reg_addr_in                       (processor_in_reg_addr),
+          .reg_data_in                       (processor_in_reg_data),
+          .reg_src_in                        (processor_in_reg_src),
 
-      .reg_req_out                       (oq_in_reg_req),
-      .reg_ack_out                       (oq_in_reg_ack),
-      .reg_rd_wr_L_out                   (oq_in_reg_rd_wr_L),
-      .reg_addr_out                      (oq_in_reg_addr),
-      .reg_data_out                      (oq_in_reg_data),
-      .reg_src_out                       (oq_in_reg_src),
+          .reg_req_out                       (oq_in_reg_req),
+          .reg_ack_out                       (oq_in_reg_ack),
+          .reg_rd_wr_L_out                   (oq_in_reg_rd_wr_L),
+          .reg_addr_out                      (oq_in_reg_addr),
+          .reg_data_out                      (oq_in_reg_data),
+          .reg_src_out                       (oq_in_reg_src),
+
+          .CLK                               (clk),
+          .RST                               (reset)
+     );
+
+  // ids #(
+  //     .DATA_WIDTH(DATA_WIDTH),
+  //     .CTRL_WIDTH(CTRL_WIDTH),
+  //     .UDP_REG_SRC_WIDTH (UDP_REG_SRC_WIDTH)
+  //     // .INPUT_ARBITER_STAGE_NUM(IN_ARB_STAGE_NUM),
+  //     // .NUM_OUTPUT_QUEUES(NUM_OUTPUT_QUEUES),
+  //     // .NUM_IQ_BITS(NUM_IQ_BITS)
+  //  ) ids (
+  //     // --- data path interface
+  //     .out_data                          (oq_in_data),
+  //     .out_ctrl                          (oq_in_ctrl),
+  //     .out_wr                            (oq_in_wr),
+  //     .out_rdy                           (oq_in_rdy),
+
+  //     .in_data                           (ids_in_data),
+  //     .in_ctrl                           (ids_in_ctrl),
+  //     .in_wr                             (ids_in_wr),
+  //     .in_rdy                            (ids_in_rdy),
+
+  //     // --- Register interface
+  //     .reg_req_in                        (ids_in_reg_req),
+  //     .reg_ack_in                        (ids_in_reg_ack),
+  //     .reg_rd_wr_L_in                    (ids_in_reg_rd_wr_L),
+  //     .reg_addr_in                       (ids_in_reg_addr),
+  //     .reg_data_in                       (ids_in_reg_data),
+  //     .reg_src_in                        (ids_in_reg_src),
+
+  //     .reg_req_out                       (oq_in_reg_req),
+  //     .reg_ack_out                       (oq_in_reg_ack),
+  //     .reg_rd_wr_L_out                   (oq_in_reg_rd_wr_L),
+  //     .reg_addr_out                      (oq_in_reg_addr),
+  //     .reg_data_out                      (oq_in_reg_data),
+  //     .reg_src_out                       (oq_in_reg_src),
       
 
-      // --- Misc
-      .clk                               (clk),
-      .reset                             (reset)
-   );
+  //     // --- Misc
+  //     .clk                               (clk),
+  //     .reset                             (reset)
+  //  );
    
    output_queues
      #(.DATA_WIDTH(DATA_WIDTH),
