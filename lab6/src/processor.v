@@ -142,12 +142,12 @@ module processor
    input  [DATA_WIDTH-1:0]             in_data,
    input  [CTRL_WIDTH-1:0]             in_ctrl,
    input                               in_wr,
-   input                               in_rdy,
+   output                              in_rdy,
 
    output [DATA_WIDTH-1:0]             out_data,
    output [CTRL_WIDTH-1:0]             out_ctrl,
    output                              out_wr,
-   output                              out_rdy,
+   input                               out_rdy,
    
    // --- Register interface
    input                               reg_req_in,
@@ -245,8 +245,10 @@ module processor
 
    wire [7:0] dmemaddr;
 
-   assign dmemaddr = (check) ? lab6_addr[7:0] : R1_out_stg3[7:0];
-   assign {data_hi, data_low} = check ? XLXN_96[63:0] : 64'hDEADDEAD;
+   // assign dmemaddr = (check) ? lab6_addr[7:0] : R1_out_stg3[7:0];
+   // assign {data_hi, data_low} = check ? XLXN_96[63:0] : 64'hDEADDEAD;
+   assign data_hi = 32'h66666666;
+   assign data_low = 32'h77777777;
 
    dmem XLXI_21 (.addr(dmemaddr), 
                  .clk(CLK), 
