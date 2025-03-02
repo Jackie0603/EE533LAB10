@@ -245,16 +245,28 @@ module processor
 
    wire [7:0] dmemaddr;
 
-   // assign dmemaddr = (check) ? lab6_addr[7:0] : R1_out_stg3[7:0];
-   // assign {data_hi, data_low} = check ? XLXN_96[63:0] : 64'hDEADDEAD;
-   assign data_hi = 32'h66666666;
-   assign data_low = 32'h77777777;
+   // assign dmemaddr = (check[0]) ? lab6_addr[7:0] : R1_out_stg3[7:0];
+   assign dmemaddr = (imemaddr == 9'b111111111) ? lab6_addr[7:0] : R1_out_stg3[7:0];
+   // assign {check_high, check_low} = ((check[0] == 1) && (imemaddr == 9'b111111111)) ? XLXN_96[63:0] : 64'hDEADDEADAAAAAAAA;
+   assign check_high = XLXN_96[63:32];
+   assign check_low = XLXN_96[31:0];
+   // assign data_hi = 32'h66666666;
+   // assign data_low = 32'h77777777;
 
-   dmem XLXI_21 (.addr(dmemaddr), 
-                 .clk(CLK), 
-                 .din(R2_out_stg3[63:0]), 
-                 .we(WMemEn), 
-                 .dout(XLXN_96[63:0]));
+   data_mem XLXI_33 (.addra(dmemaddr), 
+                     .addrb(R1_out_stg3[7:0]), 
+                     .clka(CLK), 
+                     .clkb(CLK), 
+                     .dinb(R2_out_stg3[63:0]), 
+                     .web(WMemEn), 
+                     .douta(XLXN_96[63:0]));
+
+   // dmem XLXI_21 (.addr(dmemaddr), 
+   //               .clk(CLK), 
+   //               .din(R2_out_stg3[63:0]), 
+   //               .we(WMemEn), 
+   //               .dout(XLXN_96[63:0]));
+   
 
    // dmem XLXI_21 (.addr(R1_out_stg3[7:0]), 
    //               .clk(CLK), 
@@ -283,8 +295,8 @@ module processor
    generic_regs
    #( 
       .UDP_REG_SRC_WIDTH   (UDP_REG_SRC_WIDTH),
-      .TAG                 (`CORE_BLOCK_ADDR),          // Tag -- eg. MODULE_TAG
-      .REG_ADDR_WIDTH      (`CORE_REG_ADDR_WIDTH),     // Width of block addresses -- eg. MODULE_REG_ADDR_WIDTH
+      .TAG                 (`PROCESSOR_BLOCK_ADDR),          // Tag -- eg. MODULE_TAG
+      .REG_ADDR_WIDTH      (`PROCESSOR_REG_ADDR_WIDTH),     // Width of block addresses -- eg. MODULE_REG_ADDR_WIDTH
       .NUM_COUNTERS        (0),                 // Number of counters
       .NUM_SOFTWARE_REGS   (2),                 // Number of sw regs
       .NUM_HARDWARE_REGS   (2)                  // Number of hw regs
