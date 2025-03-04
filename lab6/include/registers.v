@@ -12,9 +12,9 @@
 //   Version Information
 // -------------------------------------
 
-`define DEVICE_ID          2
-`define DEVICE_MAJOR       1
-`define DEVICE_MINOR       0
+`define DEVICE_ID          102
+`define DEVICE_MAJOR       0
+`define DEVICE_MINOR       1
 `define DEVICE_REVISION    0
 `define DEVICE_PROJ_DIR    "lab6"
 `define DEVICE_PROJ_NAME   "Reference router"
@@ -258,8 +258,6 @@
 `define DMA_REG_ADDR_WIDTH              16
 `define DRAM_BLOCK_ADDR_WIDTH           1
 `define DRAM_REG_ADDR_WIDTH             24
-`define IDS_BLOCK_ADDR_WIDTH            19
-`define IDS_REG_ADDR_WIDTH              4
 `define IN_ARB_BLOCK_ADDR_WIDTH         17
 `define IN_ARB_REG_ADDR_WIDTH           6
 `define MAC_GRP_BLOCK_ADDR_WIDTH        4
@@ -268,10 +266,14 @@
 `define MDIO_REG_ADDR_WIDTH             16
 `define OQ_BLOCK_ADDR_WIDTH             13
 `define OQ_REG_ADDR_WIDTH               10
+`define PROCESSOR_BLOCK_ADDR_WIDTH      19
+`define PROCESSOR_REG_ADDR_WIDTH        4
 `define ROUTER_OP_LUT_BLOCK_ADDR_WIDTH  17
 `define ROUTER_OP_LUT_REG_ADDR_WIDTH    6
 `define SRAM_BLOCK_ADDR_WIDTH           1
 `define SRAM_REG_ADDR_WIDTH             22
+`define STRIP_HEADERS_BLOCK_ADDR_WIDTH  17
+`define STRIP_HEADERS_REG_ADDR_WIDTH    6
 `define UDP_BLOCK_ADDR_WIDTH            1
 `define UDP_REG_ADDR_WIDTH              23
 
@@ -291,8 +293,9 @@
 `define SRAM_BLOCK_ADDR           1'h1
 `define UDP_BLOCK_ADDR            1'h1
 `define ROUTER_OP_LUT_BLOCK_ADDR  17'h00000
-`define IN_ARB_BLOCK_ADDR         17'h00001
-`define IDS_BLOCK_ADDR            19'h00008
+`define STRIP_HEADERS_BLOCK_ADDR  17'h00001
+`define IN_ARB_BLOCK_ADDR         17'h00002
+`define PROCESSOR_BLOCK_ADDR      19'h0000c
 `define OQ_BLOCK_ADDR             13'h0001
 `define DRAM_BLOCK_ADDR           1'h1
 
@@ -398,17 +401,6 @@
 `define DMA_NUM_EGRESS_PKTS    16'h3
 `define DMA_NUM_EGRESS_BYTES   16'h4
 `define DMA_NUM_TIMEOUTS       16'h5
-
-// Name: ids
-// Description: Registers for IDS
-// File: projects/lab6/include/ids.xml
-`define IDS_PATTERN_HIGH  4'h0
-`define IDS_PATTERN_LOW   4'h1
-`define IDS_IDS_CMD       4'h2
-`define IDS_LAB6_ADDR     4'h3
-`define IDS_MATCHES       4'h4
-`define IDS_CHECK_HIGH    4'h5
-`define IDS_CHECK_LOW     4'h6
 
 // Name: in_arb
 // Description: Round-robin input arbiter
@@ -526,6 +518,14 @@
 `define OQ_QUEUE_FULL_THRESH                 7'h10
 
 
+// Name: processor
+// Description: Registers for processor
+// File: projects/lab6/include/processor.xml
+`define PROCESSOR_LAB6_ADDR   4'h0
+`define PROCESSOR_CHECK       4'h1
+`define PROCESSOR_CHECK_HIGH  4'h2
+`define PROCESSOR_CHECK_LOW   4'h3
+
 // Name: router_op_lut
 // Description: Output port lookup for IPv4 router (CAM based)
 // File: lib/verilog/core/output_port_lookup/cam_router/xml/cam_router.xml
@@ -562,6 +562,10 @@
 `define ROUTER_OP_LUT_DST_IP_FILTER_TABLE_RD_ADDR    6'h1e
 `define ROUTER_OP_LUT_DST_IP_FILTER_TABLE_WR_ADDR    6'h1f
 
+// Name: strip_headers
+// Description: Strip headers from data
+// File: lib/verilog/core/strip_headers/keep_length/xml/strip_headers.xml
+
 
 
 // -------------------------------------
@@ -578,12 +582,6 @@
 // File: lib/verilog/core/dma/xml/dma.xml
 `define DMA_IFACE_CTRL_DISABLE_POS   0
 `define DMA_IFACE_CTRL_RESET_POS     1
-
-// Type: cpu_queue_control
-// Description: DMA queue control register
-// File: lib/verilog/core/io_queues/cpu_dma_queue/xml/cpu_dma_queue.xml
-`define CPU_QUEUE_CONTROL_TX_QUEUE_DISABLE_POS   0
-`define CPU_QUEUE_CONTROL_RX_QUEUE_DISABLE_POS   1
 
 // Type: mii_ctrl
 // Description: MII control register
@@ -617,6 +615,12 @@
 `define MII_STATUS_LINK_STATUS_POS                   2
 `define MII_STATUS_JABBER_DETECT_POS                 1
 `define MII_STATUS_EXTENDED_CAPABILITY_POS           0
+
+// Type: cpu_queue_control
+// Description: DMA queue control register
+// File: lib/verilog/core/io_queues/cpu_dma_queue/xml/cpu_dma_queue.xml
+`define CPU_QUEUE_CONTROL_TX_QUEUE_DISABLE_POS   0
+`define CPU_QUEUE_CONTROL_RX_QUEUE_DISABLE_POS   1
 
 // Type: mac_grp_control
 // Description: MAC group control register

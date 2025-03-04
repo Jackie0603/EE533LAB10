@@ -62,7 +62,7 @@ Timing constraint: TS_rgmii_falling_to_rising = MAXDELAY FROM TIMEGRP
 
  20 paths analyzed, 20 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Maximum delay is   3.057ns.
+ Maximum delay is   2.487ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -70,7 +70,7 @@ Timing constraint: TS_rx_clk = PERIOD TIMEGRP "rx_clock" 8 ns HIGH 50%;
 
  64432 paths analyzed, 2096 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Minimum period is   7.925ns.
+ Minimum period is   7.875ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -79,24 +79,24 @@ Timing constraint: TS_tx_clk_gmii = PERIOD TIMEGRP "tx_clock_gmii" 8 ns HIGH
 
  42244 paths analyzed, 1228 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Minimum period is   7.949ns.
+ Minimum period is   7.922ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
 Timing constraint: TS_cpci_clk = PERIOD TIMEGRP "cpci_clk" 16 ns HIGH 50%;
 
- 7704 paths analyzed, 785 endpoints analyzed, 0 failing endpoints
+ 7796 paths analyzed, 785 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Minimum period is  15.445ns.
+ Minimum period is  12.523ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
 Timing constraint: TS_core_clk_int = PERIOD TIMEGRP "core_clk_int" 8 ns HIGH 
 50%;
 
- 1325682 paths analyzed, 36213 endpoints analyzed, 0 failing endpoints
+ 1321012 paths analyzed, 34690 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Minimum period is   7.992ns.
+ Minimum period is   7.993ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -825,8 +825,8 @@ Clock to Setup on destination clock core_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-core_clk       |    7.992|         |         |         |
-cpci_clk       |    7.992|         |         |         |
+core_clk       |    7.993|         |         |         |
+cpci_clk       |    7.993|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock cpci_clk
@@ -834,8 +834,8 @@ Clock to Setup on destination clock cpci_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-core_clk       |    7.992|         |         |         |
-cpci_clk       |   15.445|         |         |         |
+core_clk       |    7.993|         |         |         |
+cpci_clk       |   12.523|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock gtx_clk
@@ -843,7 +843,7 @@ Clock to Setup on destination clock gtx_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-gtx_clk        |    7.949|         |    2.285|    2.765|
+gtx_clk        |    7.922|         |    2.200|    1.961|
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock rgmii_0_rxc
@@ -851,7 +851,7 @@ Clock to Setup on destination clock rgmii_0_rxc
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-rgmii_0_rxc    |    7.872|    3.057|         |    2.541|
+rgmii_0_rxc    |    7.875|    1.340|         |    1.492|
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock rgmii_1_rxc
@@ -859,7 +859,7 @@ Clock to Setup on destination clock rgmii_1_rxc
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-rgmii_1_rxc    |    7.925|    1.334|         |    1.397|
+rgmii_1_rxc    |    7.838|    1.780|         |    1.795|
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock rgmii_2_rxc
@@ -867,7 +867,7 @@ Clock to Setup on destination clock rgmii_2_rxc
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-rgmii_2_rxc    |    7.666|    1.807|         |    1.871|
+rgmii_2_rxc    |    7.779|    1.168|         |    1.500|
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock rgmii_3_rxc
@@ -875,7 +875,7 @@ Clock to Setup on destination clock rgmii_3_rxc
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-rgmii_3_rxc    |    7.412|    2.975|         |    2.970|
+rgmii_3_rxc    |    7.580|    2.487|         |    2.413|
 ---------------+---------+---------+---------+---------+
 
 TIMEGRP "CPCI_DATA" OFFSET = OUT 10 ns AFTER COMP "cpci_clk";
@@ -1130,24 +1130,24 @@ Timing summary:
 
 Timing errors: 0  Score: 0
 
-Constraints cover 1440581 paths, 4 nets, and 122342 connections
+Constraints cover 1436003 paths, 4 nets, and 119161 connections
 
 Design statistics:
-   Minimum period:  15.445ns   (Maximum frequency:  64.746MHz)
-   Maximum path delay from/to any node:   3.057ns
+   Minimum period:  12.523ns   (Maximum frequency:  79.853MHz)
+   Maximum path delay from/to any node:   2.487ns
    Maximum net delay:   0.603ns
    Minimum input required time before clock:   2.865ns
    Minimum output required time after clock:   4.689ns
 
 
-Analysis completed Thu Feb 27 10:31:36 2025 
+Analysis completed Sun Mar  2 15:27:43 2025 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 1068 MB
+Peak Memory Usage: 1058 MB
 
 
 

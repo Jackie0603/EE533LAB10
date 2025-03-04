@@ -96,26 +96,15 @@ Compiling verilog include file "/root/netfpga/lib/verilog/core/common/src/udp_de
 Compiling verilog file "/root/netfpga/lib/verilog/core/common/src/udp_defines.v" in library work
 Compiling verilog file "/root/netfpga/projects/cpci/include/registers.v" in library work
 Compiling verilog file "../include/registers.v" in library work
-Compiling verilog file "../src/detect7B.v" in library work
-Compiling verilog file "../src/comparator.v" in library work
-Module <detect7B> compiled
-Module <COMP8_MXILINX_comparator> compiled
-Module <AND7_MXILINX_comparator> compiled
 Compiling verilog file "../src/mux_4x8bit.v" in library work
-Module <comparator> compiled
 Module <M2_1E_MXILINX_mux_4x8bit> compiled
 Module <M4_1E_MXILINX_mux_4x8bit> compiled
-Compiling verilog file "../src/busmerge.v" in library work
-Module <mux_4x8bit> compiled
 Compiling verilog file "../src/Program_Counter.v" in library work
-Module <busmerge> compiled
+Module <mux_4x8bit> compiled
 Compiling verilog file "../src/regaddr_comparator.v" in library work
 Module <Program_Counter> compiled
-Compiling verilog file "../src/wordmatch.v" in library work
-Module <regaddr_comparator> compiled
-Module <OR8_MXILINX_wordmatch> compiled
 Compiling verilog file "../src/mux_2x64bit.v" in library work
-Module <wordmatch> compiled
+Module <regaddr_comparator> compiled
 Compiling verilog file "../src/mux_4x64bit.v" in library work
 Module <mux_2x64bit> compiled
 Compiling verilog file "../src/RegisterFile.v" in library work
@@ -123,23 +112,8 @@ Module <mux_4x64bit> compiled
 Compiling verilog file "../src/reg_64bit.v" in library work
 Module <RegisterFile> compiled
 Module <FD16RE_MXILINX_reg_64bit> compiled
-Compiling verilog file "../src/dropfifo.v" in library work
-Module <reg_64bit> compiled
-Module <FTCE_MXILINX_dropfifo> compiled
-Module <CB8CE_MXILINX_dropfifo> compiled
-Module <COMP8_MXILINX_dropfifo> compiled
-Module <M2_1_MXILINX_dropfifo> compiled
-Module <FTCLEX_MXILINX_dropfifo> compiled
-Module <CB8CLE_MXILINX_dropfifo> compiled
-Module <FD8CE_MXILINX_dropfifo> compiled
-Compiling verilog file "../src/ids.v" in library work
-Module <dropfifo> compiled
-Compiling verilog file "../src/reg9B.v" in library work
-Module <ids> compiled
-Module <FD16CE_MXILINX_reg9B> compiled
-Module <FD8CE_MXILINX_reg9B> compiled
 Compiling verilog file "../src/PC_adder.v" in library work
-Module <reg9B> compiled
+Module <reg_64bit> compiled
 Compiling verilog file "../src/user_data_path.v" in library work
 Module <PC_adder> compiled
 Compiling verilog file "../src/PC_flipflop.v" in library work
@@ -152,8 +126,10 @@ Module <processor> compiled
 Module <M2_1_MXILINX_mux_2x8bit> compiled
 Compiling verilog file "../src/src_coregen/my_ram.v" in library work
 Module <mux_2x8bit> compiled
-Compiling verilog file "../src/src_coregen/imem.v" in library work
+Compiling verilog file "../src/src_coregen/data_mem.v" in library work
 Module <my_ram> compiled
+Compiling verilog file "../src/src_coregen/imem.v" in library work
+Module <data_mem> compiled
 Compiling verilog file "../src/src_coregen/dmem.v" in library work
 Module <imem> compiled
 Compiling verilog file "/root/netfpga/lib/verilog/core/io_queues/cpu_dma_queue/src/cpu_dma_queue_regs.v" in library work
@@ -272,8 +248,10 @@ Compiling verilog file "/root/netfpga/lib/verilog/core/dma/src/nf2_dma_sync.v" i
 Module <nf2_dma_regs> compiled
 Compiling verilog file "/root/netfpga/lib/verilog/core/dma/src/nf2_dma_bus_fsm.v" in library work
 Module <nf2_dma_sync> compiled
-Compiling verilog file "/root/netfpga/lib/verilog/core/user_data_path/udp_reg_master/src/udp_reg_master.v" in library work
+Compiling verilog file "/root/netfpga/lib/verilog/core/strip_headers/keep_length/src/strip_headers.v" in library work
 Module <nf2_dma_bus_fsm> compiled
+Compiling verilog file "/root/netfpga/lib/verilog/core/user_data_path/udp_reg_master/src/udp_reg_master.v" in library work
+Module <strip_headers> compiled
 Compiling verilog file "/root/netfpga/lib/verilog/core/io_queues/add_rm_hdr/src/add_hdr.v" in library work
 Module <udp_reg_master> compiled
 Compiling verilog file "/root/netfpga/lib/verilog/core/io_queues/add_rm_hdr/src/add_rm_hdr.v" in library work
@@ -444,10 +422,10 @@ Analyzing hierarchy for module <reg_grp> in library <work> with parameters.
 	SWITCH_ADDR_BITS = "00000000000000000000000000000100"
 
 Analyzing hierarchy for module <device_id_reg> in library <work> with parameters.
-	DEVICE_ID = "00000000000000000000000000000010"
-	MAJOR = "00000000000000000000000000000001"
+	DEVICE_ID = "00000000000000000000000001100110"
+	MAJOR = "00000000000000000000000000000000"
 	MAX_STR_LEN = "00000000000000000000000001100100"
-	MINOR = "00000000000000000000000000000000"
+	MINOR = "00000000000000000000000000000001"
 	NON_STR_REGS = "00000000000000000000000000000111"
 	NUM_REGS = "00000000000000000000000001000000"
 	PROJ_DESC = "Reference IPv4 router"
@@ -590,12 +568,9 @@ Analyzing hierarchy for module <output_port_lookup> in library <work> with param
 	STAGE_NUM = "00000000000000000000000000000100"
 	UDP_REG_SRC_WIDTH = "00000000000000000000000000000010"
 
-Analyzing hierarchy for module <ids> in library <work> with parameters.
+Analyzing hierarchy for module <processor> in library <work> with parameters.
 	CTRL_WIDTH = "00000000000000000000000000001000"
 	DATA_WIDTH = "00000000000000000000000001000000"
-	HEADER = "01"
-	PAYLOAD = "10"
-	START = "00"
 	UDP_REG_SRC_WIDTH = "00000000000000000000000000000010"
 
 Analyzing hierarchy for module <output_queues> in library <work> with parameters.
@@ -990,16 +965,15 @@ Analyzing hierarchy for module <router_op_lut_regs> in library <work> with param
 	NUM_QUEUES = "00000000000000000000000000001000"
 	UDP_REG_SRC_WIDTH = "00000000000000000000000000000010"
 
-Analyzing hierarchy for module <processor> in library <work>.
+Analyzing hierarchy for module <Program_Counter> in library <work>.
 
-Analyzing hierarchy for module <fallthrough_small_fifo> in library <work> with parameters.
-	MAX_DEPTH_BITS = "00000000000000000000000000000010"
-	PROG_FULL_THRESHOLD = "00000000000000000000000000000011"
-	WIDTH = "00000000000000000000000001001000"
+Analyzing hierarchy for module <FD16RE_MXILINX_processor> in library <work>.
 
-Analyzing hierarchy for module <detect7B> in library <work>.
+Analyzing hierarchy for module <FD16RE_MXILINX_processor> in library <work>.
 
-Analyzing hierarchy for module <dropfifo> in library <work>.
+Analyzing hierarchy for module <RegisterFile> in library <work>.
+
+Analyzing hierarchy for module <reg_64bit> in library <work>.
 
 Analyzing hierarchy for module <generic_regs> in library <work> with parameters.
 	ACK_UNFOUND_ADDRESSES = "00000000000000000000000000000001"
@@ -1007,20 +981,20 @@ Analyzing hierarchy for module <generic_regs> in library <work> with parameters.
 	COUNTER_INPUT_WIDTH = "00000000000000000000000000000001"
 	COUNTER_UPDATE_WIDTH = "00000000000000000000000000000001"
 	COUNTER_WIDTH = "00000000000000000000000000100000"
-	HARDWARE_REGS_WIDTH = "00000000000000000000000000100000"
+	HARDWARE_REGS_WIDTH = "00000000000000000000000001000000"
 	INSTANCES = "00000000000000000000000000000001"
 	INST_WIDTH = "00000000000000000000000000000000"
 	MIN_UPDATE_INTERVAL = "00000000000000000000000000001000"
 	NUM_COUNTERS = "00000000000000000000000000000000"
-	NUM_HARDWARE_REGS = "00000000000000000000000000000001"
+	NUM_HARDWARE_REGS = "00000000000000000000000000000010"
 	NUM_INSTANCES = "00000000000000000000000000000001"
-	NUM_SOFTWARE_REGS = "00000000000000000000000000000011"
-	REG_ADDR_WIDTH = "00000000000000000000000000010110"
+	NUM_SOFTWARE_REGS = "00000000000000000000000000000010"
+	REG_ADDR_WIDTH = "00000000000000000000000000000100"
 	REG_START_ADDR = "00000000000000000000000000000000"
 	RESET_ON_READ = "00000000000000000000000000000000"
 	REVERSE_WORD_ORDER = "00000000000000000000000000000000"
-	SOFTWARE_REGS_WIDTH = "00000000000000000000000001100000"
-	TAG = "0"
+	SOFTWARE_REGS_WIDTH = "00000000000000000000000001000000"
+	TAG = "0000000000000001100"
 	UDP_REG_SRC_WIDTH = "00000000000000000000000000000010"
 
 Analyzing hierarchy for module <oq_header_parser> in library <work> with parameters.
@@ -1237,56 +1211,42 @@ Analyzing hierarchy for module <router_op_lut_regs_cntr> in library <work> with 
 	NUM_REGS_USED = "00000000000000000000000000001010"
 	UDP_REG_SRC_WIDTH = "00000000000000000000000000000010"
 
-Analyzing hierarchy for module <Program_Counter> in library <work>.
+Analyzing hierarchy for module <PC_adder> in library <work>.
 
-Analyzing hierarchy for module <FD16RE_MXILINX_processor> in library <work>.
+Analyzing hierarchy for module <PC_flipflop> in library <work>.
 
-Analyzing hierarchy for module <FD16RE_MXILINX_processor> in library <work>.
+Analyzing hierarchy for module <mux_4x64bit> in library <work>.
 
-Analyzing hierarchy for module <RegisterFile> in library <work>.
+Analyzing hierarchy for module <mux_2x64bit> in library <work>.
 
-Analyzing hierarchy for module <reg_64bit> in library <work>.
+Analyzing hierarchy for module <regaddr_comparator> in library <work>.
 
-Analyzing hierarchy for module <small_fifo> in library <work> with parameters.
-	MAX_DEPTH = "00000000000000000000000000000100"
-	MAX_DEPTH_BITS = "00000000000000000000000000000010"
-	PROG_FULL_THRESHOLD = "00000000000000000000000000000011"
-	WIDTH = "00000000000000000000000001001000"
+Analyzing hierarchy for module <FD16RE_MXILINX_reg_64bit> in library <work>.
 
-Analyzing hierarchy for module <reg9B> in library <work>.
+Analyzing hierarchy for module <FD16RE_MXILINX_reg_64bit> in library <work>.
 
-Analyzing hierarchy for module <busmerge> in library <work>.
+Analyzing hierarchy for module <FD16RE_MXILINX_reg_64bit> in library <work>.
 
-Analyzing hierarchy for module <wordmatch> in library <work>.
-
-Analyzing hierarchy for module <FD8CE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <CB8CLE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <CB8CE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <COMP8_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <COMP8_MXILINX_dropfifo> in library <work>.
+Analyzing hierarchy for module <FD16RE_MXILINX_reg_64bit> in library <work>.
 
 Analyzing hierarchy for module <generic_sw_regs> in library <work> with parameters.
-	INPUT_END = "00000000000000000000000001100000"
+	INPUT_END = "00000000000000000000000001000000"
 	INPUT_START = "00000000000000000000000000000000"
-	NUM_REGS_USED = "00000000000000000000000000000011"
-	REG_ADDR_WIDTH = "00000000000000000000000000010110"
-	REG_END_ADDR = "00000000000000000000000000000011"
+	NUM_REGS_USED = "00000000000000000000000000000010"
+	REG_ADDR_WIDTH = "00000000000000000000000000000100"
+	REG_END_ADDR = "00000000000000000000000000000010"
 	REG_START_ADDR = "00000000000000000000000000000000"
-	TAG = "0"
+	TAG = "0000000000000001100"
 	UDP_REG_SRC_WIDTH = "00000000000000000000000000000010"
 
 Analyzing hierarchy for module <generic_hw_regs> in library <work> with parameters.
-	NUM_REGS_USED = "00000000000000000000000000000001"
+	NUM_REGS_USED = "00000000000000000000000000000010"
 	OUTPUT_END = "00000000000000000000000010000000"
-	OUTPUT_START = "00000000000000000000000001100000"
-	REG_ADDR_WIDTH = "00000000000000000000000000010110"
+	OUTPUT_START = "00000000000000000000000001000000"
+	REG_ADDR_WIDTH = "00000000000000000000000000000100"
 	REG_END_ADDR = "00000000000000000000000000000100"
-	REG_START_ADDR = "00000000000000000000000000000011"
-	TAG = "0"
+	REG_START_ADDR = "00000000000000000000000000000010"
+	TAG = "0000000000000001100"
 	UDP_REG_SRC_WIDTH = "00000000000000000000000000000010"
 
 Analyzing hierarchy for module <fallthrough_small_fifo> in library <work> with parameters.
@@ -1457,69 +1417,9 @@ Analyzing hierarchy for module <generic_cntr_regs> in library <work> with parame
 	UPDATES_PER_CYCLE = "00000000000000000000000000000010"
 	UPDATES_START = "00000000000000000000000000000000"
 
-Analyzing hierarchy for module <PC_adder> in library <work>.
+Analyzing hierarchy for module <mux_4x8bit> in library <work>.
 
-Analyzing hierarchy for module <PC_flipflop> in library <work>.
-
-Analyzing hierarchy for module <mux_4x64bit> in library <work>.
-
-Analyzing hierarchy for module <mux_2x64bit> in library <work>.
-
-Analyzing hierarchy for module <regaddr_comparator> in library <work>.
-
-Analyzing hierarchy for module <FD16RE_MXILINX_reg_64bit> in library <work>.
-
-Analyzing hierarchy for module <FD16RE_MXILINX_reg_64bit> in library <work>.
-
-Analyzing hierarchy for module <FD16RE_MXILINX_reg_64bit> in library <work>.
-
-Analyzing hierarchy for module <FD16RE_MXILINX_reg_64bit> in library <work>.
-
-Analyzing hierarchy for module <FD8CE_MXILINX_reg9B> in library <work>.
-
-Analyzing hierarchy for module <FD16CE_MXILINX_reg9B> in library <work>.
-
-Analyzing hierarchy for module <FD16CE_MXILINX_reg9B> in library <work>.
-
-Analyzing hierarchy for module <FD16CE_MXILINX_reg9B> in library <work>.
-
-Analyzing hierarchy for module <FD16CE_MXILINX_reg9B> in library <work>.
-
-Analyzing hierarchy for module <comparator> in library <work>.
-
-Analyzing hierarchy for module <OR8_MXILINX_wordmatch> in library <work>.
-
-Analyzing hierarchy for module <FTCLEX_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCLEX_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCLEX_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCLEX_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCLEX_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCLEX_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCLEX_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCLEX_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCE_MXILINX_dropfifo> in library <work>.
-
-Analyzing hierarchy for module <FTCE_MXILINX_dropfifo> in library <work>.
+Analyzing hierarchy for module <mux_2x8bit> in library <work>.
 
 Analyzing hierarchy for module <small_fifo> in library <work> with parameters.
 	MAX_DEPTH = "00000000000000000000000000001000"
@@ -1591,27 +1491,37 @@ Analyzing hierarchy for module <oq_regs_generic_reg_grp> in library <work> with 
 	REPLACE_ON_WRITE = "00000000000000000000000000000000"
 	WRITE_WIDTH = "00000000000000000000000000000001"
 
-Analyzing hierarchy for module <mux_4x8bit> in library <work>.
+Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
 
-Analyzing hierarchy for module <mux_2x8bit> in library <work>.
+Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
 
-Analyzing hierarchy for module <COMP8_MXILINX_comparator> in library <work>.
+Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
 
-Analyzing hierarchy for module <COMP8_MXILINX_comparator> in library <work>.
+Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
 
-Analyzing hierarchy for module <COMP8_MXILINX_comparator> in library <work>.
+Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
 
-Analyzing hierarchy for module <COMP8_MXILINX_comparator> in library <work>.
+Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
 
-Analyzing hierarchy for module <COMP8_MXILINX_comparator> in library <work>.
+Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
 
-Analyzing hierarchy for module <COMP8_MXILINX_comparator> in library <work>.
+Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
 
-Analyzing hierarchy for module <COMP8_MXILINX_comparator> in library <work>.
+Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
 
-Analyzing hierarchy for module <AND7_MXILINX_comparator> in library <work>.
+Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
 
-Analyzing hierarchy for module <M2_1_MXILINX_dropfifo> in library <work>.
+Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
+
+Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
+
+Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
+
+Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
+
+Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
+
+Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
 
 Analyzing hierarchy for module <oq_regs_dual_port_ram> in library <work> with parameters.
 	NUM_OUTPUT_QUEUES = "00000000000000000000000000001000"
@@ -1627,38 +1537,6 @@ Analyzing hierarchy for module <oq_regs_dual_port_ram> in library <work> with pa
 	NUM_OUTPUT_QUEUES = "00000000000000000000000000001000"
 	REG_FILE_ADDR_WIDTH = "00000000000000000000000000000011"
 	REG_WIDTH = "00000000000000000000000000010000"
-
-Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
-
-Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
-
-Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
-
-Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
-
-Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
-
-Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
-
-Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
-
-Analyzing hierarchy for module <M4_1E_MXILINX_mux_4x8bit> in library <work>.
-
-Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
-
-Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
-
-Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
-
-Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
-
-Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
-
-Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
-
-Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
-
-Analyzing hierarchy for module <M2_1_MXILINX_mux_2x8bit> in library <work>.
 
 Analyzing hierarchy for module <M2_1E_MXILINX_mux_4x8bit> in library <work>.
 
@@ -2163,18 +2041,18 @@ Analyzing module <eth_parser> in library <work>.
 	Calling function <log2>.
 Module <eth_parser> is correct for synthesis.
  
-Analyzing module <fallthrough_small_fifo.6> in library <work>.
+Analyzing module <fallthrough_small_fifo.5> in library <work>.
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
 	WIDTH = 32'sb00000000000000000000000000000111
-Module <fallthrough_small_fifo.6> is correct for synthesis.
+Module <fallthrough_small_fifo.5> is correct for synthesis.
  
-Analyzing module <small_fifo.7> in library <work>.
+Analyzing module <small_fifo.6> in library <work>.
 	MAX_DEPTH = 32'sb00000000000000000000000000000100
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
 	WIDTH = 32'sb00000000000000000000000000000111
-Module <small_fifo.7> is correct for synthesis.
+Module <small_fifo.6> is correct for synthesis.
  
 Analyzing module <ip_lpm> in library <work>.
 	DATA_WIDTH = 32'sb00000000000000000000000001000000
@@ -2217,18 +2095,18 @@ Analyzing module <unencoded_cam_lut_sm.2> in library <work>.
 Module <unencoded_cam_lut_sm.2> is correct for synthesis.
  
     Set property "PRIORITY_EXTRACT = force" for signal <cam_match_encoded_addr>.
-Analyzing module <fallthrough_small_fifo.7> in library <work>.
+Analyzing module <fallthrough_small_fifo.6> in library <work>.
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
 	WIDTH = 32'sb00000000000000000000000000111010
-Module <fallthrough_small_fifo.7> is correct for synthesis.
+Module <fallthrough_small_fifo.6> is correct for synthesis.
  
-Analyzing module <small_fifo.8> in library <work>.
+Analyzing module <small_fifo.7> in library <work>.
 	MAX_DEPTH = 32'sb00000000000000000000000000000100
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
 	WIDTH = 32'sb00000000000000000000000000111010
-Module <small_fifo.8> is correct for synthesis.
+Module <small_fifo.7> is correct for synthesis.
  
 Analyzing module <dest_ip_filter> in library <work>.
 	DATA_WIDTH = 32'sb00000000000000000000000001000000
@@ -2250,35 +2128,35 @@ Analyzing module <unencoded_cam_lut_sm.3> in library <work>.
 Module <unencoded_cam_lut_sm.3> is correct for synthesis.
  
     Set property "PRIORITY_EXTRACT = force" for signal <cam_match_encoded_addr>.
-Analyzing module <fallthrough_small_fifo.8> in library <work>.
+Analyzing module <fallthrough_small_fifo.7> in library <work>.
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
 	WIDTH = 32'sb00000000000000000000000000000001
+Module <fallthrough_small_fifo.7> is correct for synthesis.
+ 
+Analyzing module <small_fifo.8> in library <work>.
+	MAX_DEPTH = 32'sb00000000000000000000000000000100
+	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
+	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
+	WIDTH = 32'sb00000000000000000000000000000001
+Module <small_fifo.8> is correct for synthesis.
+ 
+Analyzing module <ip_checksum_ttl> in library <work>.
+	DATA_WIDTH = 32'sb00000000000000000000000001000000
+Module <ip_checksum_ttl> is correct for synthesis.
+ 
+Analyzing module <fallthrough_small_fifo.8> in library <work>.
+	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
+	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
+	WIDTH = 32'sb00000000000000000000000000011011
 Module <fallthrough_small_fifo.8> is correct for synthesis.
  
 Analyzing module <small_fifo.9> in library <work>.
 	MAX_DEPTH = 32'sb00000000000000000000000000000100
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
-	WIDTH = 32'sb00000000000000000000000000000001
+	WIDTH = 32'sb00000000000000000000000000011011
 Module <small_fifo.9> is correct for synthesis.
- 
-Analyzing module <ip_checksum_ttl> in library <work>.
-	DATA_WIDTH = 32'sb00000000000000000000000001000000
-Module <ip_checksum_ttl> is correct for synthesis.
- 
-Analyzing module <fallthrough_small_fifo.9> in library <work>.
-	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
-	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
-	WIDTH = 32'sb00000000000000000000000000011011
-Module <fallthrough_small_fifo.9> is correct for synthesis.
- 
-Analyzing module <small_fifo.10> in library <work>.
-	MAX_DEPTH = 32'sb00000000000000000000000000000100
-	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
-	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
-	WIDTH = 32'sb00000000000000000000000000011011
-Module <small_fifo.10> is correct for synthesis.
  
 Analyzing module <op_lut_hdr_parser> in library <work>.
 	CTRL_WIDTH = 32'sb00000000000000000000000000001000
@@ -2291,18 +2169,18 @@ Analyzing module <op_lut_hdr_parser> in library <work>.
 	WAIT_EOP = 32'sb00000000000000000000000000000001
 Module <op_lut_hdr_parser> is correct for synthesis.
  
-Analyzing module <fallthrough_small_fifo.10> in library <work>.
+Analyzing module <fallthrough_small_fifo.9> in library <work>.
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
 	WIDTH = 32'sb00000000000000000000000000010100
-Module <fallthrough_small_fifo.10> is correct for synthesis.
+Module <fallthrough_small_fifo.9> is correct for synthesis.
  
-Analyzing module <small_fifo.11> in library <work>.
+Analyzing module <small_fifo.10> in library <work>.
 	MAX_DEPTH = 32'sb00000000000000000000000000000100
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
 	WIDTH = 32'sb00000000000000000000000000010100
-Module <small_fifo.11> is correct for synthesis.
+Module <small_fifo.10> is correct for synthesis.
  
 Analyzing module <op_lut_process_sm> in library <work>.
 	CTRL_WIDTH = 32'sb00000000000000000000000000001000
@@ -2376,18 +2254,12 @@ INFO:Xst:1433 - Contents of array <deltas> may be accessed with an index that ex
 INFO:Xst:1433 - Contents of array <reg_file> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
 Module <generic_cntr_regs> is correct for synthesis.
  
-Analyzing module <ids> in library <work>.
+Analyzing module <processor> in library <work>.
 	CTRL_WIDTH = 32'sb00000000000000000000000000001000
 	DATA_WIDTH = 32'sb00000000000000000000000001000000
-	HEADER = 2'b01
-	PAYLOAD = 2'b10
-	START = 2'b00
 	UDP_REG_SRC_WIDTH = 32'sb00000000000000000000000000000010
-WARNING:Xst:852 - "../src/ids.v" line 165: Unconnected input port 'counter_updates' of instance 'module_regs' is tied to GND.
-WARNING:Xst:852 - "../src/ids.v" line 165: Unconnected input port 'counter_decrement' of instance 'module_regs' is tied to GND.
-Module <ids> is correct for synthesis.
- 
-Analyzing module <processor> in library <work>.
+WARNING:Xst:852 - "../src/processor.v" line 303: Unconnected input port 'counter_updates' of instance 'module_regs' is tied to GND.
+WARNING:Xst:852 - "../src/processor.v" line 303: Unconnected input port 'counter_decrement' of instance 'module_regs' is tied to GND.
 Module <processor> is correct for synthesis.
  
     Set user-defined property "INIT =  0" for instance <XLXI_23> in unit <processor>.
@@ -2628,355 +2500,50 @@ Module <FD16RE_MXILINX_reg_64bit.4> is correct for synthesis.
     Set user-defined property "INIT =  0" for instance <I_Q13> in unit <FD16RE_MXILINX_reg_64bit.4>.
     Set user-defined property "INIT =  0" for instance <I_Q14> in unit <FD16RE_MXILINX_reg_64bit.4>.
     Set user-defined property "INIT =  0" for instance <I_Q15> in unit <FD16RE_MXILINX_reg_64bit.4>.
-Analyzing module <fallthrough_small_fifo.2> in library <work>.
-	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
-	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
-	WIDTH = 32'sb00000000000000000000000001001000
-Module <fallthrough_small_fifo.2> is correct for synthesis.
- 
-Analyzing module <small_fifo.3> in library <work>.
-	MAX_DEPTH = 32'sb00000000000000000000000000000100
-	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000010
-	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000011
-	WIDTH = 32'sb00000000000000000000000001001000
-Module <small_fifo.3> is correct for synthesis.
- 
-Analyzing module <detect7B> in library <work>.
-Module <detect7B> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <XLXI_5> in unit <detect7B>.
-    Set user-defined property "INIT =  0" for instance <XLXI_6> in unit <detect7B>.
-Analyzing module <reg9B> in library <work>.
-Module <reg9B> is correct for synthesis.
- 
-    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <reg9B>.
-    Set user-defined property "HU_SET =  XLXI_2_1" for instance <XLXI_2> in unit <reg9B>.
-    Set user-defined property "HU_SET =  XLXI_3_2" for instance <XLXI_3> in unit <reg9B>.
-    Set user-defined property "HU_SET =  XLXI_4_3" for instance <XLXI_4> in unit <reg9B>.
-    Set user-defined property "HU_SET =  XLXI_5_4" for instance <XLXI_5> in unit <reg9B>.
-Analyzing module <FD8CE_MXILINX_reg9B> in library <work>.
-Module <FD8CE_MXILINX_reg9B> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_Q0> in unit <FD8CE_MXILINX_reg9B>.
-    Set user-defined property "INIT =  0" for instance <I_Q1> in unit <FD8CE_MXILINX_reg9B>.
-    Set user-defined property "INIT =  0" for instance <I_Q2> in unit <FD8CE_MXILINX_reg9B>.
-    Set user-defined property "INIT =  0" for instance <I_Q3> in unit <FD8CE_MXILINX_reg9B>.
-    Set user-defined property "INIT =  0" for instance <I_Q4> in unit <FD8CE_MXILINX_reg9B>.
-    Set user-defined property "INIT =  0" for instance <I_Q5> in unit <FD8CE_MXILINX_reg9B>.
-    Set user-defined property "INIT =  0" for instance <I_Q6> in unit <FD8CE_MXILINX_reg9B>.
-    Set user-defined property "INIT =  0" for instance <I_Q7> in unit <FD8CE_MXILINX_reg9B>.
-Analyzing module <FD16CE_MXILINX_reg9B.1> in library <work>.
-Module <FD16CE_MXILINX_reg9B.1> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_Q0> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q1> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q2> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q3> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q4> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q5> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q6> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q7> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q8> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q9> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q10> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q11> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q12> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q13> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q14> in unit <FD16CE_MXILINX_reg9B.1>.
-    Set user-defined property "INIT =  0" for instance <I_Q15> in unit <FD16CE_MXILINX_reg9B.1>.
-Analyzing module <FD16CE_MXILINX_reg9B.2> in library <work>.
-Module <FD16CE_MXILINX_reg9B.2> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_Q0> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q1> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q2> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q3> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q4> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q5> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q6> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q7> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q8> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q9> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q10> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q11> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q12> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q13> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q14> in unit <FD16CE_MXILINX_reg9B.2>.
-    Set user-defined property "INIT =  0" for instance <I_Q15> in unit <FD16CE_MXILINX_reg9B.2>.
-Analyzing module <FD16CE_MXILINX_reg9B.3> in library <work>.
-Module <FD16CE_MXILINX_reg9B.3> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_Q0> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q1> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q2> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q3> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q4> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q5> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q6> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q7> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q8> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q9> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q10> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q11> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q12> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q13> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q14> in unit <FD16CE_MXILINX_reg9B.3>.
-    Set user-defined property "INIT =  0" for instance <I_Q15> in unit <FD16CE_MXILINX_reg9B.3>.
-Analyzing module <FD16CE_MXILINX_reg9B.4> in library <work>.
-Module <FD16CE_MXILINX_reg9B.4> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_Q0> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q1> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q2> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q3> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q4> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q5> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q6> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q7> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q8> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q9> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q10> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q11> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q12> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q13> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q14> in unit <FD16CE_MXILINX_reg9B.4>.
-    Set user-defined property "INIT =  0" for instance <I_Q15> in unit <FD16CE_MXILINX_reg9B.4>.
-Analyzing module <busmerge> in library <work>.
-Module <busmerge> is correct for synthesis.
- 
-Analyzing module <wordmatch> in library <work>.
-Module <wordmatch> is correct for synthesis.
- 
-    Set user-defined property "HU_SET =  XLXI_23_0" for instance <XLXI_23> in unit <wordmatch>.
-Analyzing module <comparator> in library <work>.
-Module <comparator> is correct for synthesis.
- 
-    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <comparator>.
-    Set user-defined property "HU_SET =  XLXI_2_6" for instance <XLXI_2> in unit <comparator>.
-    Set user-defined property "HU_SET =  XLXI_3_3" for instance <XLXI_3> in unit <comparator>.
-    Set user-defined property "HU_SET =  XLXI_35_5" for instance <XLXI_35> in unit <comparator>.
-    Set user-defined property "HU_SET =  XLXI_4_4" for instance <XLXI_4> in unit <comparator>.
-    Set user-defined property "HU_SET =  XLXI_5_1" for instance <XLXI_5> in unit <comparator>.
-    Set user-defined property "HU_SET =  XLXI_6_2" for instance <XLXI_6> in unit <comparator>.
-    Set user-defined property "HU_SET =  XLXI_7_7" for instance <XLXI_7> in unit <comparator>.
-Analyzing module <COMP8_MXILINX_comparator.1> in library <work>.
-Module <COMP8_MXILINX_comparator.1> is correct for synthesis.
- 
-Analyzing module <COMP8_MXILINX_comparator.2> in library <work>.
-Module <COMP8_MXILINX_comparator.2> is correct for synthesis.
- 
-Analyzing module <COMP8_MXILINX_comparator.3> in library <work>.
-Module <COMP8_MXILINX_comparator.3> is correct for synthesis.
- 
-Analyzing module <COMP8_MXILINX_comparator.4> in library <work>.
-Module <COMP8_MXILINX_comparator.4> is correct for synthesis.
- 
-Analyzing module <COMP8_MXILINX_comparator.5> in library <work>.
-Module <COMP8_MXILINX_comparator.5> is correct for synthesis.
- 
-Analyzing module <COMP8_MXILINX_comparator.6> in library <work>.
-Module <COMP8_MXILINX_comparator.6> is correct for synthesis.
- 
-Analyzing module <COMP8_MXILINX_comparator.7> in library <work>.
-Module <COMP8_MXILINX_comparator.7> is correct for synthesis.
- 
-Analyzing module <AND7_MXILINX_comparator> in library <work>.
-Module <AND7_MXILINX_comparator> is correct for synthesis.
- 
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_98> in unit <AND7_MXILINX_comparator>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_110> in unit <AND7_MXILINX_comparator>.
-Analyzing module <OR8_MXILINX_wordmatch> in library <work>.
-Module <OR8_MXILINX_wordmatch> is correct for synthesis.
- 
-    Set user-defined property "RLOC =  X0Y1" for instance <I_36_91> in unit <OR8_MXILINX_wordmatch>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_116> in unit <OR8_MXILINX_wordmatch>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_117> in unit <OR8_MXILINX_wordmatch>.
-Analyzing module <dropfifo> in library <work>.
-Module <dropfifo> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <XLXI_1> in unit <dropfifo>.
-    Set user-defined property "INIT =  0" for instance <XLXI_2> in unit <dropfifo>.
-    Set user-defined property "INIT =  0" for instance <XLXI_3> in unit <dropfifo>.
-    Set user-defined property "INIT =  0" for instance <XLXI_4> in unit <dropfifo>.
-    Set user-defined property "INIT =  0" for instance <XLXI_8> in unit <dropfifo>.
-    Set user-defined property "HU_SET =  XLXI_10_20" for instance <XLXI_10> in unit <dropfifo>.
-    Set user-defined property "HU_SET =  XLXI_5_17" for instance <XLXI_5> in unit <dropfifo>.
-    Set user-defined property "HU_SET =  XLXI_6_18" for instance <XLXI_6> in unit <dropfifo>.
-    Set user-defined property "HU_SET =  XLXI_7_21" for instance <XLXI_7> in unit <dropfifo>.
-    Set user-defined property "HU_SET =  XLXI_9_19" for instance <XLXI_9> in unit <dropfifo>.
-Analyzing module <FD8CE_MXILINX_dropfifo> in library <work>.
-Module <FD8CE_MXILINX_dropfifo> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_Q0> in unit <FD8CE_MXILINX_dropfifo>.
-    Set user-defined property "INIT =  0" for instance <I_Q1> in unit <FD8CE_MXILINX_dropfifo>.
-    Set user-defined property "INIT =  0" for instance <I_Q2> in unit <FD8CE_MXILINX_dropfifo>.
-    Set user-defined property "INIT =  0" for instance <I_Q3> in unit <FD8CE_MXILINX_dropfifo>.
-    Set user-defined property "INIT =  0" for instance <I_Q4> in unit <FD8CE_MXILINX_dropfifo>.
-    Set user-defined property "INIT =  0" for instance <I_Q5> in unit <FD8CE_MXILINX_dropfifo>.
-    Set user-defined property "INIT =  0" for instance <I_Q6> in unit <FD8CE_MXILINX_dropfifo>.
-    Set user-defined property "INIT =  0" for instance <I_Q7> in unit <FD8CE_MXILINX_dropfifo>.
-Analyzing module <CB8CLE_MXILINX_dropfifo> in library <work>.
-Module <CB8CLE_MXILINX_dropfifo> is correct for synthesis.
- 
-    Set user-defined property "HU_SET =  I_Q0_9" for instance <I_Q0> in unit <CB8CLE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q1_10" for instance <I_Q1> in unit <CB8CLE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q2_11" for instance <I_Q2> in unit <CB8CLE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q3_12" for instance <I_Q3> in unit <CB8CLE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q4_13" for instance <I_Q4> in unit <CB8CLE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q5_14" for instance <I_Q5> in unit <CB8CLE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q6_15" for instance <I_Q6> in unit <CB8CLE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q7_16" for instance <I_Q7> in unit <CB8CLE_MXILINX_dropfifo>.
-Analyzing module <FTCLEX_MXILINX_dropfifo.1> in library <work>.
-Module <FTCLEX_MXILINX_dropfifo.1> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.1>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.1>.
-    Set user-defined property "HU_SET =  I_36_30_8" for instance <I_36_30> in unit <FTCLEX_MXILINX_dropfifo.1>.
-Analyzing module <M2_1_MXILINX_dropfifo> in library <work>.
-Module <M2_1_MXILINX_dropfifo> is correct for synthesis.
- 
-Analyzing module <FTCLEX_MXILINX_dropfifo.2> in library <work>.
-Module <FTCLEX_MXILINX_dropfifo.2> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.2>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.2>.
-    Set user-defined property "HU_SET =  I_36_30_8" for instance <I_36_30> in unit <FTCLEX_MXILINX_dropfifo.2>.
-Analyzing module <FTCLEX_MXILINX_dropfifo.3> in library <work>.
-Module <FTCLEX_MXILINX_dropfifo.3> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.3>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.3>.
-    Set user-defined property "HU_SET =  I_36_30_8" for instance <I_36_30> in unit <FTCLEX_MXILINX_dropfifo.3>.
-Analyzing module <FTCLEX_MXILINX_dropfifo.4> in library <work>.
-Module <FTCLEX_MXILINX_dropfifo.4> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.4>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.4>.
-    Set user-defined property "HU_SET =  I_36_30_8" for instance <I_36_30> in unit <FTCLEX_MXILINX_dropfifo.4>.
-Analyzing module <FTCLEX_MXILINX_dropfifo.5> in library <work>.
-Module <FTCLEX_MXILINX_dropfifo.5> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.5>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.5>.
-    Set user-defined property "HU_SET =  I_36_30_8" for instance <I_36_30> in unit <FTCLEX_MXILINX_dropfifo.5>.
-Analyzing module <FTCLEX_MXILINX_dropfifo.6> in library <work>.
-Module <FTCLEX_MXILINX_dropfifo.6> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.6>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.6>.
-    Set user-defined property "HU_SET =  I_36_30_8" for instance <I_36_30> in unit <FTCLEX_MXILINX_dropfifo.6>.
-Analyzing module <FTCLEX_MXILINX_dropfifo.7> in library <work>.
-Module <FTCLEX_MXILINX_dropfifo.7> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.7>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.7>.
-    Set user-defined property "HU_SET =  I_36_30_8" for instance <I_36_30> in unit <FTCLEX_MXILINX_dropfifo.7>.
-Analyzing module <FTCLEX_MXILINX_dropfifo.8> in library <work>.
-Module <FTCLEX_MXILINX_dropfifo.8> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.8>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCLEX_MXILINX_dropfifo.8>.
-    Set user-defined property "HU_SET =  I_36_30_8" for instance <I_36_30> in unit <FTCLEX_MXILINX_dropfifo.8>.
-Analyzing module <CB8CE_MXILINX_dropfifo> in library <work>.
-Module <CB8CE_MXILINX_dropfifo> is correct for synthesis.
- 
-    Set user-defined property "HU_SET =  I_Q0_6" for instance <I_Q0> in unit <CB8CE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q1_7" for instance <I_Q1> in unit <CB8CE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q2_3" for instance <I_Q2> in unit <CB8CE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q3_4" for instance <I_Q3> in unit <CB8CE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q4_5" for instance <I_Q4> in unit <CB8CE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q5_2" for instance <I_Q5> in unit <CB8CE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q6_1" for instance <I_Q6> in unit <CB8CE_MXILINX_dropfifo>.
-    Set user-defined property "HU_SET =  I_Q7_0" for instance <I_Q7> in unit <CB8CE_MXILINX_dropfifo>.
-Analyzing module <FTCE_MXILINX_dropfifo.1> in library <work>.
-Module <FTCE_MXILINX_dropfifo.1> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.1>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.1>.
-Analyzing module <FTCE_MXILINX_dropfifo.2> in library <work>.
-Module <FTCE_MXILINX_dropfifo.2> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.2>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.2>.
-Analyzing module <FTCE_MXILINX_dropfifo.3> in library <work>.
-Module <FTCE_MXILINX_dropfifo.3> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.3>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.3>.
-Analyzing module <FTCE_MXILINX_dropfifo.4> in library <work>.
-Module <FTCE_MXILINX_dropfifo.4> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.4>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.4>.
-Analyzing module <FTCE_MXILINX_dropfifo.5> in library <work>.
-Module <FTCE_MXILINX_dropfifo.5> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.5>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.5>.
-Analyzing module <FTCE_MXILINX_dropfifo.6> in library <work>.
-Module <FTCE_MXILINX_dropfifo.6> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.6>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.6>.
-Analyzing module <FTCE_MXILINX_dropfifo.7> in library <work>.
-Module <FTCE_MXILINX_dropfifo.7> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.7>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.7>.
-Analyzing module <FTCE_MXILINX_dropfifo.8> in library <work>.
-Module <FTCE_MXILINX_dropfifo.8> is correct for synthesis.
- 
-    Set user-defined property "INIT =  0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.8>.
-    Set user-defined property "RLOC =  X0Y0" for instance <I_36_35> in unit <FTCE_MXILINX_dropfifo.8>.
-Analyzing module <COMP8_MXILINX_dropfifo.1> in library <work>.
-Module <COMP8_MXILINX_dropfifo.1> is correct for synthesis.
- 
-Analyzing module <COMP8_MXILINX_dropfifo.2> in library <work>.
-Module <COMP8_MXILINX_dropfifo.2> is correct for synthesis.
- 
 Analyzing module <generic_regs> in library <work>.
 	ACK_UNFOUND_ADDRESSES = 32'sb00000000000000000000000000000001
 	COUNTER_DECREMENT_WIDTH = 32'sb00000000000000000000000000000001
 	COUNTER_INPUT_WIDTH = 32'sb00000000000000000000000000000001
 	COUNTER_UPDATE_WIDTH = 32'sb00000000000000000000000000000001
 	COUNTER_WIDTH = 32'sb00000000000000000000000000100000
-	HARDWARE_REGS_WIDTH = 32'sb00000000000000000000000000100000
+	HARDWARE_REGS_WIDTH = 32'sb00000000000000000000000001000000
 	INSTANCES = 32'sb00000000000000000000000000000001
 	INST_WIDTH = 32'sb00000000000000000000000000000000
 	MIN_UPDATE_INTERVAL = 32'sb00000000000000000000000000001000
 	NUM_COUNTERS = 32'sb00000000000000000000000000000000
-	NUM_HARDWARE_REGS = 32'sb00000000000000000000000000000001
+	NUM_HARDWARE_REGS = 32'sb00000000000000000000000000000010
 	NUM_INSTANCES = 32'sb00000000000000000000000000000001
-	NUM_SOFTWARE_REGS = 32'sb00000000000000000000000000000011
-	REG_ADDR_WIDTH = 32'sb00000000000000000000000000010110
+	NUM_SOFTWARE_REGS = 32'sb00000000000000000000000000000010
+	REG_ADDR_WIDTH = 32'sb00000000000000000000000000000100
 	REG_START_ADDR = 32'sb00000000000000000000000000000000
 	RESET_ON_READ = 32'sb00000000000000000000000000000000
 	REVERSE_WORD_ORDER = 32'sb00000000000000000000000000000000
-	SOFTWARE_REGS_WIDTH = 32'sb00000000000000000000000001100000
-	TAG = 1'b0
+	SOFTWARE_REGS_WIDTH = 32'sb00000000000000000000000001000000
+	TAG = 19'b0000000000000001100
 	UDP_REG_SRC_WIDTH = 32'sb00000000000000000000000000000010
 Module <generic_regs> is correct for synthesis.
  
 Analyzing module <generic_sw_regs> in library <work>.
-	INPUT_END = 32'sb00000000000000000000000001100000
+	INPUT_END = 32'sb00000000000000000000000001000000
 	INPUT_START = 32'sb00000000000000000000000000000000
-	NUM_REGS_USED = 32'sb00000000000000000000000000000011
-	REG_ADDR_WIDTH = 32'sb00000000000000000000000000010110
-	REG_END_ADDR = 32'sb00000000000000000000000000000011
+	NUM_REGS_USED = 32'sb00000000000000000000000000000010
+	REG_ADDR_WIDTH = 32'sb00000000000000000000000000000100
+	REG_END_ADDR = 32'sb00000000000000000000000000000010
 	REG_START_ADDR = 32'sb00000000000000000000000000000000
-	TAG = 1'b0
+	TAG = 19'b0000000000000001100
 	UDP_REG_SRC_WIDTH = 32'sb00000000000000000000000000000010
 Module <generic_sw_regs> is correct for synthesis.
  
 Analyzing module <generic_hw_regs> in library <work>.
-	NUM_REGS_USED = 32'sb00000000000000000000000000000001
+	NUM_REGS_USED = 32'sb00000000000000000000000000000010
 	OUTPUT_END = 32'sb00000000000000000000000010000000
-	OUTPUT_START = 32'sb00000000000000000000000001100000
-	REG_ADDR_WIDTH = 32'sb00000000000000000000000000010110
+	OUTPUT_START = 32'sb00000000000000000000000001000000
+	REG_ADDR_WIDTH = 32'sb00000000000000000000000000000100
 	REG_END_ADDR = 32'sb00000000000000000000000000000100
-	REG_START_ADDR = 32'sb00000000000000000000000000000011
-	TAG = 1'b0
+	REG_START_ADDR = 32'sb00000000000000000000000000000010
+	TAG = 19'b0000000000000001100
 	UDP_REG_SRC_WIDTH = 32'sb00000000000000000000000000000010
+INFO:Xst:1433 - Contents of array <reg_file> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
 Module <generic_hw_regs> is correct for synthesis.
  
 Analyzing module <output_queues> in library <work>.
@@ -3011,31 +2578,31 @@ Analyzing module <oq_header_parser> in library <work>.
 	PKT_WORD_CNT_WIDTH = 32'sb00000000000000000000000000001000
 Module <oq_header_parser> is correct for synthesis.
  
-Analyzing module <fallthrough_small_fifo.11> in library <work>.
+Analyzing module <fallthrough_small_fifo.10> in library <work>.
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000011
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000111
 	WIDTH = 32'sb00000000000000000000000000010110
-Module <fallthrough_small_fifo.11> is correct for synthesis.
+Module <fallthrough_small_fifo.10> is correct for synthesis.
  
-Analyzing module <small_fifo.12> in library <work>.
+Analyzing module <small_fifo.11> in library <work>.
 	MAX_DEPTH = 32'sb00000000000000000000000000001000
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000011
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000111
 	WIDTH = 32'sb00000000000000000000000000010110
-Module <small_fifo.12> is correct for synthesis.
+Module <small_fifo.11> is correct for synthesis.
  
-Analyzing module <fallthrough_small_fifo.3> in library <work>.
+Analyzing module <fallthrough_small_fifo.2> in library <work>.
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000011
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000111
 	WIDTH = 32'sb00000000000000000000000001001000
-Module <fallthrough_small_fifo.3> is correct for synthesis.
+Module <fallthrough_small_fifo.2> is correct for synthesis.
  
-Analyzing module <small_fifo.4> in library <work>.
+Analyzing module <small_fifo.3> in library <work>.
 	MAX_DEPTH = 32'sb00000000000000000000000000001000
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000011
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000111
 	WIDTH = 32'sb00000000000000000000000001001000
-Module <small_fifo.4> is correct for synthesis.
+Module <small_fifo.3> is correct for synthesis.
  
 Analyzing module <store_pkt> in library <work>.
 	COUNT_DATA = 32'sb00000000000000000000000000000100
@@ -3308,10 +2875,10 @@ Analyzing module <reg_grp.2> in library <work>.
 Module <reg_grp.2> is correct for synthesis.
  
 Analyzing module <device_id_reg> in library <work>.
-	DEVICE_ID = 32'sb00000000000000000000000000000010
-	MAJOR = 32'sb00000000000000000000000000000001
+	DEVICE_ID = 32'sb00000000000000000000000001100110
+	MAJOR = 32'sb00000000000000000000000000000000
 	MAX_STR_LEN = 32'sb00000000000000000000000001100100
-	MINOR = 32'sb00000000000000000000000000000000
+	MINOR = 32'sb00000000000000000000000000000001
 	NON_STR_REGS = 32'sb00000000000000000000000000000111
 	NUM_REGS = 32'sb00000000000000000000000001000000
 	PROJ_DESC = "Reference IPv4 router"
@@ -3781,18 +3348,18 @@ Analyzing module <cpu_dma_rx_queue.1> in library <work>.
 WARNING:Xst:2211 - "/root/netfpga/lib/verilog/core/io_queues/cpu_dma_queue/src/src_coregen/cdq_rx_fifo_512x36_to_72.v" line 181: Instantiating black box module <cdq_rx_fifo_512x36_to_72>.
 Module <cpu_dma_rx_queue.1> is correct for synthesis.
  
-Analyzing module <fallthrough_small_fifo.4> in library <work>.
+Analyzing module <fallthrough_small_fifo.3> in library <work>.
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000011
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000111
 	WIDTH = 32'sb00000000000000000000000000001101
-Module <fallthrough_small_fifo.4> is correct for synthesis.
+Module <fallthrough_small_fifo.3> is correct for synthesis.
  
-Analyzing module <small_fifo.5> in library <work>.
+Analyzing module <small_fifo.4> in library <work>.
 	MAX_DEPTH = 32'sb00000000000000000000000000001000
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000011
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000111
 	WIDTH = 32'sb00000000000000000000000000001101
-Module <small_fifo.5> is correct for synthesis.
+Module <small_fifo.4> is correct for synthesis.
  
 Analyzing module <cpu_dma_tx_queue> in library <work>.
 	CTRL_WIDTH = 32'sb00000000000000000000000000001000
@@ -3812,18 +3379,18 @@ Analyzing module <cpu_dma_tx_queue> in library <work>.
 WARNING:Xst:2211 - "/root/netfpga/lib/verilog/core/io_queues/cpu_dma_queue/src/src_coregen/cdq_tx_fifo_256x72_to_36.v" line 181: Instantiating black box module <cdq_tx_fifo_256x72_to_36>.
 Module <cpu_dma_tx_queue> is correct for synthesis.
  
-Analyzing module <fallthrough_small_fifo.5> in library <work>.
+Analyzing module <fallthrough_small_fifo.4> in library <work>.
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000011
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000111
 	WIDTH = 32'sb00000000000000000000000000001100
-Module <fallthrough_small_fifo.5> is correct for synthesis.
+Module <fallthrough_small_fifo.4> is correct for synthesis.
  
-Analyzing module <small_fifo.6> in library <work>.
+Analyzing module <small_fifo.5> in library <work>.
 	MAX_DEPTH = 32'sb00000000000000000000000000001000
 	MAX_DEPTH_BITS = 32'sb00000000000000000000000000000011
 	PROG_FULL_THRESHOLD = 32'sb00000000000000000000000000000111
 	WIDTH = 32'sb00000000000000000000000000001100
-Module <small_fifo.6> is correct for synthesis.
+Module <small_fifo.5> is correct for synthesis.
  
 Analyzing module <cpu_dma_queue_regs> in library <work>.
 	BYTE_CNT_WIDTH = 32'sb00000000000000000000000000001100
@@ -3933,8 +3500,7 @@ INFO:Xst:2679 - Register <cam_data_mask> in unit <unencoded_cam_lut_sm_2> has a 
 INFO:Xst:2679 - Register <cam_data_mask> in unit <unencoded_cam_lut_sm_3> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <lut_wr_data> in unit <unencoded_cam_lut_sm_3> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <i> in unit <generic_cntr_regs> has a constant value of 1010 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <counter> in unit <ids> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <ii> in unit <generic_sw_regs> has a constant value of 11 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ii> in unit <generic_sw_regs> has a constant value of 10 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <num_bytes_written> in unit <cpu_dma_rx_queue_1> has a constant value of 000000000000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <num_bytes_written> in unit <cpu_dma_rx_queue_2> has a constant value of 000000000000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <num_bytes_written> in unit <cpu_dma_rx_queue_3> has a constant value of 000000000000 during circuit operation. The register is replaced by logic.
@@ -4214,7 +3780,7 @@ Synthesizing Unit <small_fifo_2>.
 Unit <small_fifo_2> synthesized.
 
 
-Synthesizing Unit <small_fifo_7>.
+Synthesizing Unit <small_fifo_6>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
     Found 4x7-bit dual-port RAM <Mram_queue> for signal <queue>.
     Found 3-bit comparator greatequal for signal <nearly_full>.
@@ -4228,7 +3794,7 @@ Synthesizing Unit <small_fifo_7>.
 	inferred   3 Counter(s).
 	inferred   7 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-Unit <small_fifo_7> synthesized.
+Unit <small_fifo_6> synthesized.
 
 
 Synthesizing Unit <unencoded_cam_lut_sm_1>.
@@ -4296,7 +3862,7 @@ WARNING:Xst:646 - Signal <cam_match_unencoded_addr<31>> is assigned but never us
 Unit <unencoded_cam_lut_sm_2> synthesized.
 
 
-Synthesizing Unit <small_fifo_8>.
+Synthesizing Unit <small_fifo_7>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
     Found 4x58-bit dual-port RAM <Mram_queue> for signal <queue>.
     Found 3-bit comparator greatequal for signal <nearly_full>.
@@ -4310,7 +3876,7 @@ Synthesizing Unit <small_fifo_8>.
 	inferred   3 Counter(s).
 	inferred  58 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-Unit <small_fifo_8> synthesized.
+Unit <small_fifo_7> synthesized.
 
 
 Synthesizing Unit <unencoded_cam_lut_sm_3>.
@@ -4344,7 +3910,7 @@ WARNING:Xst:646 - Signal <cam_match_unencoded_addr<31>> is assigned but never us
 Unit <unencoded_cam_lut_sm_3> synthesized.
 
 
-Synthesizing Unit <small_fifo_9>.
+Synthesizing Unit <small_fifo_8>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
     Found 3-bit comparator greatequal for signal <nearly_full>.
     Found 3-bit comparator greatequal for signal <prog_full>.
@@ -4358,10 +3924,10 @@ Synthesizing Unit <small_fifo_9>.
 	inferred   5 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred   1 Multiplexer(s).
-Unit <small_fifo_9> synthesized.
+Unit <small_fifo_8> synthesized.
 
 
-Synthesizing Unit <small_fifo_10>.
+Synthesizing Unit <small_fifo_9>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
     Found 4x27-bit dual-port RAM <Mram_queue> for signal <queue>.
     Found 3-bit comparator greatequal for signal <nearly_full>.
@@ -4375,10 +3941,10 @@ Synthesizing Unit <small_fifo_10>.
 	inferred   3 Counter(s).
 	inferred  27 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-Unit <small_fifo_10> synthesized.
+Unit <small_fifo_9> synthesized.
 
 
-Synthesizing Unit <small_fifo_11>.
+Synthesizing Unit <small_fifo_10>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
     Found 4x20-bit dual-port RAM <Mram_queue> for signal <queue>.
     Found 3-bit comparator greatequal for signal <nearly_full>.
@@ -4392,7 +3958,7 @@ Synthesizing Unit <small_fifo_11>.
 	inferred   3 Counter(s).
 	inferred  20 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-Unit <small_fifo_11> synthesized.
+Unit <small_fifo_10> synthesized.
 
 
 Synthesizing Unit <router_op_lut_regs_non_cntr>.
@@ -4498,28 +4064,6 @@ Synthesizing Unit <regaddr_comparator>.
 Unit <regaddr_comparator> synthesized.
 
 
-Synthesizing Unit <small_fifo_3>.
-    Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
-    Found 4x72-bit dual-port RAM <Mram_queue> for signal <queue>.
-    Found 3-bit comparator greatequal for signal <nearly_full>.
-    Found 3-bit comparator greatequal for signal <prog_full>.
-    Found 72-bit register for signal <dout>.
-    Found 3-bit updown counter for signal <depth>.
-    Found 2-bit up counter for signal <rd_ptr>.
-    Found 2-bit up counter for signal <wr_ptr>.
-    Summary:
-	inferred   1 RAM(s).
-	inferred   3 Counter(s).
-	inferred  72 D-type flip-flop(s).
-	inferred   2 Comparator(s).
-Unit <small_fifo_3> synthesized.
-
-
-Synthesizing Unit <busmerge>.
-    Related source file is "../src/busmerge.v".
-Unit <busmerge> synthesized.
-
-
 Synthesizing Unit <generic_sw_regs>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/generic_regs/src/generic_sw_regs.v".
     Found 32-bit register for signal <reg_data_out>.
@@ -4528,13 +4072,13 @@ Synthesizing Unit <generic_sw_regs>.
     Found 1-bit register for signal <reg_req_out>.
     Found 23-bit register for signal <reg_addr_out>.
     Found 2-bit register for signal <reg_src_out>.
-    Found 22-bit comparator less for signal <addr_good>.
+    Found 4-bit comparator less for signal <addr_good>.
     Found 32-bit 4-to-1 multiplexer for signal <reg_data_out$mux0000>.
-    Found 96-bit register for signal <reg_file>.
+    Found 64-bit register for signal <reg_file>.
     Summary:
-	inferred 156 D-type flip-flop(s).
+	inferred 124 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  64 Multiplexer(s).
+	inferred  32 Multiplexer(s).
 Unit <generic_sw_regs> synthesized.
 
 
@@ -4546,8 +4090,8 @@ Synthesizing Unit <generic_hw_regs>.
     Found 1-bit register for signal <reg_req_out>.
     Found 23-bit register for signal <reg_addr_out>.
     Found 2-bit register for signal <reg_src_out>.
-    Found 22-bit comparator greatequal for signal <addr_good$cmp_ge0000> created at line 72.
-    Found 22-bit comparator less for signal <addr_good$cmp_lt0000> created at line 72.
+    Found 4-bit comparator greatequal for signal <addr_good$cmp_ge0000> created at line 72.
+    Found 4-bit comparator less for signal <addr_good$cmp_lt0000> created at line 72.
     Found 32-bit 4-to-1 multiplexer for signal <reg_data_out$mux0000>.
     Summary:
 	inferred  60 D-type flip-flop(s).
@@ -4581,7 +4125,7 @@ Synthesizing Unit <store_pkt>.
 Unit <store_pkt> synthesized.
 
 
-Synthesizing Unit <small_fifo_12>.
+Synthesizing Unit <small_fifo_11>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
     Found 8x22-bit dual-port RAM <Mram_queue> for signal <queue>.
     Found 4-bit comparator greatequal for signal <nearly_full>.
@@ -4595,10 +4139,10 @@ Synthesizing Unit <small_fifo_12>.
 	inferred   3 Counter(s).
 	inferred  22 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-Unit <small_fifo_12> synthesized.
+Unit <small_fifo_11> synthesized.
 
 
-Synthesizing Unit <small_fifo_4>.
+Synthesizing Unit <small_fifo_3>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
     Found 8x72-bit dual-port RAM <Mram_queue> for signal <queue>.
     Found 4-bit comparator greatequal for signal <nearly_full>.
@@ -4612,7 +4156,7 @@ Synthesizing Unit <small_fifo_4>.
 	inferred   3 Counter(s).
 	inferred  72 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-Unit <small_fifo_4> synthesized.
+Unit <small_fifo_3> synthesized.
 
 
 Synthesizing Unit <oq_regs_ctrl>.
@@ -5248,7 +4792,7 @@ WARNING:Xst:646 - Signal <delta> is assigned but never used. This unconnected si
 Unit <cpu_dma_queue_regs> synthesized.
 
 
-Synthesizing Unit <small_fifo_5>.
+Synthesizing Unit <small_fifo_4>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
     Found 8x13-bit dual-port RAM <Mram_queue> for signal <queue>.
     Found 4-bit comparator greatequal for signal <nearly_full>.
@@ -5262,10 +4806,10 @@ Synthesizing Unit <small_fifo_5>.
 	inferred   3 Counter(s).
 	inferred  13 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-Unit <small_fifo_5> synthesized.
+Unit <small_fifo_4> synthesized.
 
 
-Synthesizing Unit <small_fifo_6>.
+Synthesizing Unit <small_fifo_5>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/small_fifo_v3.v".
     Found 8x12-bit dual-port RAM <Mram_queue> for signal <queue>.
     Found 4-bit comparator greatequal for signal <nearly_full>.
@@ -5279,7 +4823,7 @@ Synthesizing Unit <small_fifo_6>.
 	inferred   3 Counter(s).
 	inferred  12 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-Unit <small_fifo_6> synthesized.
+Unit <small_fifo_5> synthesized.
 
 
 Synthesizing Unit <rgmii_io_1>.
@@ -5466,6 +5010,14 @@ WARNING:Xst:647 - Input <in_data<47:16>> is never used. This port will be preser
 Unit <ip_lpm> synthesized.
 
 
+Synthesizing Unit <fallthrough_small_fifo_5>.
+    Related source file is "/root/netfpga/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v".
+    Found 1-bit register for signal <empty>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <fallthrough_small_fifo_5> synthesized.
+
+
 Synthesizing Unit <fallthrough_small_fifo_6>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v".
     Found 1-bit register for signal <empty>.
@@ -5498,25 +5050,24 @@ Synthesizing Unit <fallthrough_small_fifo_9>.
 Unit <fallthrough_small_fifo_9> synthesized.
 
 
-Synthesizing Unit <fallthrough_small_fifo_10>.
-    Related source file is "/root/netfpga/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v".
-    Found 1-bit register for signal <empty>.
-    Summary:
-	inferred   1 D-type flip-flop(s).
-Unit <fallthrough_small_fifo_10> synthesized.
-
-
 Synthesizing Unit <router_op_lut_regs_cntr>.
     Related source file is "/root/netfpga/lib/verilog/core/output_port_lookup/cam_router/src/router_op_lut_regs_cntr.v".
 Unit <router_op_lut_regs_cntr> synthesized.
 
 
-Synthesizing Unit <fallthrough_small_fifo_2>.
-    Related source file is "/root/netfpga/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v".
-    Found 1-bit register for signal <empty>.
-    Summary:
-	inferred   1 D-type flip-flop(s).
-Unit <fallthrough_small_fifo_2> synthesized.
+Synthesizing Unit <Program_Counter>.
+    Related source file is "../src/Program_Counter.v".
+Unit <Program_Counter> synthesized.
+
+
+Synthesizing Unit <FD16RE_MXILINX_processor_1>.
+    Related source file is "../src/processor.v".
+Unit <FD16RE_MXILINX_processor_1> synthesized.
+
+
+Synthesizing Unit <FD16RE_MXILINX_processor_2>.
+    Related source file is "../src/processor.v".
+Unit <FD16RE_MXILINX_processor_2> synthesized.
 
 
 Synthesizing Unit <generic_regs>.
@@ -5534,21 +5085,6 @@ WARNING:Xst:646 - Signal <counter_decrement_expanded<0>> is assigned but never u
 	inferred  60 D-type flip-flop(s).
 	inferred  32 Multiplexer(s).
 Unit <generic_regs> synthesized.
-
-
-Synthesizing Unit <Program_Counter>.
-    Related source file is "../src/Program_Counter.v".
-Unit <Program_Counter> synthesized.
-
-
-Synthesizing Unit <FD16RE_MXILINX_processor_1>.
-    Related source file is "../src/processor.v".
-Unit <FD16RE_MXILINX_processor_1> synthesized.
-
-
-Synthesizing Unit <FD16RE_MXILINX_processor_2>.
-    Related source file is "../src/processor.v".
-Unit <FD16RE_MXILINX_processor_2> synthesized.
 
 
 Synthesizing Unit <M2_1E_MXILINX_mux_4x8bit_1>.
@@ -5621,143 +5157,12 @@ Synthesizing Unit <FD16RE_MXILINX_reg_64bit_4>.
 Unit <FD16RE_MXILINX_reg_64bit_4> synthesized.
 
 
-Synthesizing Unit <FD8CE_MXILINX_reg9B>.
-    Related source file is "../src/reg9B.v".
-Unit <FD8CE_MXILINX_reg9B> synthesized.
-
-
-Synthesizing Unit <FD16CE_MXILINX_reg9B_1>.
-    Related source file is "../src/reg9B.v".
-Unit <FD16CE_MXILINX_reg9B_1> synthesized.
-
-
-Synthesizing Unit <FD16CE_MXILINX_reg9B_2>.
-    Related source file is "../src/reg9B.v".
-Unit <FD16CE_MXILINX_reg9B_2> synthesized.
-
-
-Synthesizing Unit <FD16CE_MXILINX_reg9B_3>.
-    Related source file is "../src/reg9B.v".
-Unit <FD16CE_MXILINX_reg9B_3> synthesized.
-
-
-Synthesizing Unit <FD16CE_MXILINX_reg9B_4>.
-    Related source file is "../src/reg9B.v".
-Unit <FD16CE_MXILINX_reg9B_4> synthesized.
-
-
-Synthesizing Unit <OR8_MXILINX_wordmatch>.
-    Related source file is "../src/wordmatch.v".
-WARNING:Xst:653 - Signal <dummy> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-Unit <OR8_MXILINX_wordmatch> synthesized.
-
-
-Synthesizing Unit <COMP8_MXILINX_comparator_1>.
-    Related source file is "../src/comparator.v".
-Unit <COMP8_MXILINX_comparator_1> synthesized.
-
-
-Synthesizing Unit <COMP8_MXILINX_comparator_2>.
-    Related source file is "../src/comparator.v".
-Unit <COMP8_MXILINX_comparator_2> synthesized.
-
-
-Synthesizing Unit <COMP8_MXILINX_comparator_3>.
-    Related source file is "../src/comparator.v".
-Unit <COMP8_MXILINX_comparator_3> synthesized.
-
-
-Synthesizing Unit <COMP8_MXILINX_comparator_4>.
-    Related source file is "../src/comparator.v".
-Unit <COMP8_MXILINX_comparator_4> synthesized.
-
-
-Synthesizing Unit <COMP8_MXILINX_comparator_5>.
-    Related source file is "../src/comparator.v".
-Unit <COMP8_MXILINX_comparator_5> synthesized.
-
-
-Synthesizing Unit <COMP8_MXILINX_comparator_6>.
-    Related source file is "../src/comparator.v".
-Unit <COMP8_MXILINX_comparator_6> synthesized.
-
-
-Synthesizing Unit <COMP8_MXILINX_comparator_7>.
-    Related source file is "../src/comparator.v".
-Unit <COMP8_MXILINX_comparator_7> synthesized.
-
-
-Synthesizing Unit <AND7_MXILINX_comparator>.
-    Related source file is "../src/comparator.v".
-Unit <AND7_MXILINX_comparator> synthesized.
-
-
-Synthesizing Unit <FD8CE_MXILINX_dropfifo>.
-    Related source file is "../src/dropfifo.v".
-Unit <FD8CE_MXILINX_dropfifo> synthesized.
-
-
-Synthesizing Unit <COMP8_MXILINX_dropfifo_1>.
-    Related source file is "../src/dropfifo.v".
-Unit <COMP8_MXILINX_dropfifo_1> synthesized.
-
-
-Synthesizing Unit <COMP8_MXILINX_dropfifo_2>.
-    Related source file is "../src/dropfifo.v".
-Unit <COMP8_MXILINX_dropfifo_2> synthesized.
-
-
-Synthesizing Unit <M2_1_MXILINX_dropfifo>.
-    Related source file is "../src/dropfifo.v".
-Unit <M2_1_MXILINX_dropfifo> synthesized.
-
-
-Synthesizing Unit <FTCE_MXILINX_dropfifo_1>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCE_MXILINX_dropfifo_1> synthesized.
-
-
-Synthesizing Unit <FTCE_MXILINX_dropfifo_2>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCE_MXILINX_dropfifo_2> synthesized.
-
-
-Synthesizing Unit <FTCE_MXILINX_dropfifo_3>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCE_MXILINX_dropfifo_3> synthesized.
-
-
-Synthesizing Unit <FTCE_MXILINX_dropfifo_4>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCE_MXILINX_dropfifo_4> synthesized.
-
-
-Synthesizing Unit <FTCE_MXILINX_dropfifo_5>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCE_MXILINX_dropfifo_5> synthesized.
-
-
-Synthesizing Unit <FTCE_MXILINX_dropfifo_6>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCE_MXILINX_dropfifo_6> synthesized.
-
-
-Synthesizing Unit <FTCE_MXILINX_dropfifo_7>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCE_MXILINX_dropfifo_7> synthesized.
-
-
-Synthesizing Unit <FTCE_MXILINX_dropfifo_8>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCE_MXILINX_dropfifo_8> synthesized.
-
-
-Synthesizing Unit <fallthrough_small_fifo_3>.
+Synthesizing Unit <fallthrough_small_fifo_2>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v".
     Found 1-bit register for signal <empty>.
     Summary:
 	inferred   1 D-type flip-flop(s).
-Unit <fallthrough_small_fifo_3> synthesized.
+Unit <fallthrough_small_fifo_2> synthesized.
 
 
 Synthesizing Unit <remove_pkt>.
@@ -5799,12 +5204,12 @@ WARNING:Xst:646 - Signal <sram_data_out<31:12>> is assigned but never used. This
 Unit <remove_pkt> synthesized.
 
 
-Synthesizing Unit <fallthrough_small_fifo_11>.
+Synthesizing Unit <fallthrough_small_fifo_10>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v".
     Found 1-bit register for signal <empty>.
     Summary:
 	inferred   1 D-type flip-flop(s).
-Unit <fallthrough_small_fifo_11> synthesized.
+Unit <fallthrough_small_fifo_10> synthesized.
 
 
 Synthesizing Unit <oq_regs_generic_reg_grp_1>.
@@ -6335,20 +5740,20 @@ WARNING:Xst:646 - Signal <rx_fifo_empty> is assigned but never used. This unconn
 Unit <rx_queue_4> synthesized.
 
 
+Synthesizing Unit <fallthrough_small_fifo_3>.
+    Related source file is "/root/netfpga/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v".
+    Found 1-bit register for signal <empty>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <fallthrough_small_fifo_3> synthesized.
+
+
 Synthesizing Unit <fallthrough_small_fifo_4>.
     Related source file is "/root/netfpga/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v".
     Found 1-bit register for signal <empty>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <fallthrough_small_fifo_4> synthesized.
-
-
-Synthesizing Unit <fallthrough_small_fifo_5>.
-    Related source file is "/root/netfpga/lib/verilog/core/utils/src/fallthrough_small_fifo_v2.v".
-    Found 1-bit register for signal <empty>.
-    Summary:
-	inferred   1 D-type flip-flop(s).
-Unit <fallthrough_small_fifo_5> synthesized.
 
 
 Synthesizing Unit <eth_parser>.
@@ -6482,61 +5887,6 @@ Unit <M4_1E_MXILINX_mux_4x8bit_8> synthesized.
 Synthesizing Unit <mux_2x8bit>.
     Related source file is "../src/mux_2x8bit.v".
 Unit <mux_2x8bit> synthesized.
-
-
-Synthesizing Unit <reg9B>.
-    Related source file is "../src/reg9B.v".
-Unit <reg9B> synthesized.
-
-
-Synthesizing Unit <comparator>.
-    Related source file is "../src/comparator.v".
-Unit <comparator> synthesized.
-
-
-Synthesizing Unit <CB8CE_MXILINX_dropfifo>.
-    Related source file is "../src/dropfifo.v".
-Unit <CB8CE_MXILINX_dropfifo> synthesized.
-
-
-Synthesizing Unit <FTCLEX_MXILINX_dropfifo_1>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCLEX_MXILINX_dropfifo_1> synthesized.
-
-
-Synthesizing Unit <FTCLEX_MXILINX_dropfifo_2>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCLEX_MXILINX_dropfifo_2> synthesized.
-
-
-Synthesizing Unit <FTCLEX_MXILINX_dropfifo_3>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCLEX_MXILINX_dropfifo_3> synthesized.
-
-
-Synthesizing Unit <FTCLEX_MXILINX_dropfifo_4>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCLEX_MXILINX_dropfifo_4> synthesized.
-
-
-Synthesizing Unit <FTCLEX_MXILINX_dropfifo_5>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCLEX_MXILINX_dropfifo_5> synthesized.
-
-
-Synthesizing Unit <FTCLEX_MXILINX_dropfifo_6>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCLEX_MXILINX_dropfifo_6> synthesized.
-
-
-Synthesizing Unit <FTCLEX_MXILINX_dropfifo_7>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCLEX_MXILINX_dropfifo_7> synthesized.
-
-
-Synthesizing Unit <FTCLEX_MXILINX_dropfifo_8>.
-    Related source file is "../src/dropfifo.v".
-Unit <FTCLEX_MXILINX_dropfifo_8> synthesized.
 
 
 Synthesizing Unit <oq_header_parser>.
@@ -6851,16 +6201,6 @@ Synthesizing Unit <mux_4x8bit>.
 Unit <mux_4x8bit> synthesized.
 
 
-Synthesizing Unit <wordmatch>.
-    Related source file is "../src/wordmatch.v".
-Unit <wordmatch> synthesized.
-
-
-Synthesizing Unit <CB8CLE_MXILINX_dropfifo>.
-    Related source file is "../src/dropfifo.v".
-Unit <CB8CLE_MXILINX_dropfifo> synthesized.
-
-
 Synthesizing Unit <oq_regs>.
     Related source file is "/root/netfpga/lib/verilog/core/output_queues/sram_rr_output_queues/src/oq_regs.v".
 WARNING:Xst:1780 - Signal <reg_req> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -6870,18 +6210,6 @@ Unit <oq_regs> synthesized.
 Synthesizing Unit <output_queues>.
     Related source file is "/root/netfpga/lib/verilog/core/output_queues/sram_rr_output_queues/src/output_queues.v".
 Unit <output_queues> synthesized.
-
-
-Synthesizing Unit <detect7B>.
-    Related source file is "../src/detect7B.v".
-WARNING:Xst:647 - Input <hwregA<63>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:646 - Signal <pipe0<71:48>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-Unit <detect7B> synthesized.
-
-
-Synthesizing Unit <dropfifo>.
-    Related source file is "../src/dropfifo.v".
-Unit <dropfifo> synthesized.
 
 
 Synthesizing Unit <mux_4x64bit>.
@@ -6896,46 +6224,11 @@ Unit <RegisterFile> synthesized.
 
 Synthesizing Unit <processor>.
     Related source file is "../src/processor.v".
+WARNING:Xst:646 - Signal <lab6_addr<31:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <instr_stage1<31:9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <instr_stage1<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <R1_out_stg3<63:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <processor> synthesized.
-
-
-Synthesizing Unit <ids>.
-    Related source file is "../src/ids.v".
-WARNING:Xst:646 - Signal <lab6_addr<31:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <ids_cmd<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <counter> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <check_high> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Found finite state machine <FSM_12> for signal <state>.
-    -----------------------------------------------------------------------
-    | States             | 3                                              |
-    | Transitions        | 7                                              |
-    | Inputs             | 3                                              |
-    | Outputs            | 3                                              |
-    | Clock              | clk (rising_edge)                              |
-    | Clock enable       | matcher_ce (positive)                          |
-    | Reset              | reset (positive)                               |
-    | Reset type         | synchronous                                    |
-    | Reset State        | 00                                             |
-    | Encoding           | automatic                                      |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-WARNING:Xst:737 - Found 32-bit latch for signal <check_low>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 4x2-bit ROM for signal <core_state$rom0000>.
-    Found 1-bit register for signal <begin_pkt>.
-    Found 1-bit register for signal <end_of_pkt>.
-    Found 3-bit register for signal <header_counter>.
-    Found 1-bit register for signal <in_pkt_body>.
-    Found 32-bit register for signal <matches>.
-    Found 32-bit adder for signal <matches_next$addsub0000> created at line 256.
-    Summary:
-	inferred   1 Finite State Machine(s).
-	inferred   1 ROM(s).
-	inferred  38 D-type flip-flop(s).
-	inferred   2 Adder/Subtractor(s).
-Unit <ids> synthesized.
 
 
 Synthesizing Unit <user_data_path>.
@@ -7098,7 +6391,7 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 55
+# RAMs                                                 : 54
  10x32-bit dual-port RAM                               : 1
  13x32-bit single-port RAM                             : 4
  17x32-bit single-port RAM                             : 4
@@ -7110,7 +6403,7 @@ Macro Statistics
  4x27-bit dual-port RAM                                : 1
  4x58-bit dual-port RAM                                : 1
  4x7-bit dual-port RAM                                 : 1
- 4x72-bit dual-port RAM                                : 9
+ 4x72-bit dual-port RAM                                : 8
  6x32-bit single-port RAM                              : 1
  8x12-bit dual-port RAM                                : 4
  8x13-bit dual-port RAM                                : 4
@@ -7121,11 +6414,10 @@ Macro Statistics
  8x35-bit dual-port RAM                                : 1
  8x37-bit dual-port RAM                                : 1
  8x72-bit dual-port RAM                                : 1
-# ROMs                                                 : 6
+# ROMs                                                 : 5
  4x14-bit ROM                                          : 4
- 4x2-bit ROM                                           : 1
  64x32-bit ROM                                         : 1
-# Adders/Subtractors                                   : 141
+# Adders/Subtractors                                   : 140
  10-bit adder                                          : 2
  11-bit subtractor                                     : 2
  12-bit adder                                          : 5
@@ -7135,7 +6427,7 @@ Macro Statistics
  19-bit adder                                          : 12
  2-bit adder                                           : 5
  20-bit adder                                          : 6
- 3-bit adder                                           : 5
+ 3-bit adder                                           : 4
  3-bit addsub                                          : 16
  3-bit subtractor                                      : 1
  32-bit adder                                          : 24
@@ -7151,12 +6443,12 @@ Macro Statistics
  8-bit subtractor                                      : 2
  9-bit adder                                           : 13
  9-bit subtractor                                      : 1
-# Counters                                             : 129
+# Counters                                             : 126
  12-bit up counter                                     : 4
- 2-bit up counter                                      : 44
+ 2-bit up counter                                      : 42
  20-bit down counter                                   : 1
  3-bit up counter                                      : 25
- 3-bit updown counter                                  : 14
+ 3-bit updown counter                                  : 13
  32-bit up counter                                     : 1
  4-bit up counter                                      : 4
  4-bit updown counter                                  : 10
@@ -7171,8 +6463,8 @@ Macro Statistics
  12-bit up loadable accumulator                        : 18
  19-bit up accumulator                                 : 2
  3-bit up loadable accumulator                         : 10
-# Registers                                            : 2029
- 1-bit register                                        : 1388
+# Registers                                            : 2022
+ 1-bit register                                        : 1384
  10-bit register                                       : 18
  104-bit register                                      : 1
  11-bit register                                       : 15
@@ -7190,8 +6482,8 @@ Macro Statistics
  24-bit register                                       : 1
  25-bit register                                       : 1
  27-bit register                                       : 2
- 3-bit register                                        : 64
- 32-bit register                                       : 160
+ 3-bit register                                        : 63
+ 32-bit register                                       : 159
  4-bit register                                        : 46
  40-bit register                                       : 1
  48-bit register                                       : 5
@@ -7201,12 +6493,10 @@ Macro Statistics
  64-bit register                                       : 12
  65-bit register                                       : 1
  7-bit register                                        : 8
- 72-bit register                                       : 19
+ 72-bit register                                       : 18
  8-bit register                                        : 50
  9-bit register                                        : 6
-# Latches                                              : 1
- 32-bit latch                                          : 1
-# Comparators                                          : 142
+# Comparators                                          : 140
  11-bit comparator lessequal                           : 2
  12-bit comparator greatequal                          : 4
  14-bit comparator equal                               : 4
@@ -7219,13 +6509,11 @@ Macro Statistics
  19-bit comparator less                                : 2
  19-bit comparator lessequal                           : 2
  2-bit comparator not equal                            : 1
- 22-bit comparator greatequal                          : 1
- 22-bit comparator less                                : 2
  3-bit comparator equal                                : 29
- 3-bit comparator greatequal                           : 28
+ 3-bit comparator greatequal                           : 26
  4-bit comparator equal                                : 4
- 4-bit comparator greatequal                           : 20
- 4-bit comparator less                                 : 1
+ 4-bit comparator greatequal                           : 21
+ 4-bit comparator less                                 : 3
  48-bit comparator equal                               : 1
  5-bit comparator less                                 : 4
  6-bit comparator greatequal                           : 3
@@ -7235,14 +6523,13 @@ Macro Statistics
  7-bit comparator not equal                            : 4
  8-bit comparator greater                              : 1
  9-bit comparator not equal                            : 4
-# Multiplexers                                         : 45
+# Multiplexers                                         : 44
  1-bit 16-to-1 multiplexer                             : 1
  1-bit 4-to-1 multiplexer                              : 2
  1-bit 8-to-1 multiplexer                              : 6
  13-bit 16-to-1 multiplexer                            : 4
  3-bit 10-to-1 multiplexer                             : 1
  32-bit 16-to-1 multiplexer                            : 1
- 32-bit 3-to-1 multiplexer                             : 1
  32-bit 4-to-1 multiplexer                             : 24
  4-bit 4-to-1 multiplexer                              : 1
  64-bit 8-to-1 multiplexer                             : 1
@@ -7270,15 +6557,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-Analyzing FSM <FSM_12> for best encoding.
-Optimizing FSM <nf2_core/user_data_path/ids/state/FSM> on signal <state[1:2]> with sequential encoding.
--------------------
- State | Encoding
--------------------
- 00    | 00
- 01    | 01
- 10    | 10
--------------------
 Analyzing FSM <FSM_11> for best encoding.
 Optimizing FSM <nf2_core/cpu_queues[3].cpu_dma_queue_i/cpu_dma_rx_queue/out_state/FSM> on signal <out_state[1:2]> with sequential encoding.
 -------------------
@@ -7655,14 +6933,14 @@ INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to ma
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 4-word x 27-bit                     |          |
+    |     aspect ratio   | 4-word x 20-bit                     |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <wr_en>         | high     |
     |     addrA          | connected to signal <wr_ptr>        |          |
     |     diA            | connected to signal <din>           |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 4-word x 27-bit                     |          |
+    |     aspect ratio   | 4-word x 20-bit                     |          |
     |     addrB          | connected to signal <rd_ptr>        |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -7674,37 +6952,18 @@ INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to ma
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 4-word x 20-bit                     |          |
+    |     aspect ratio   | 8-word x 22-bit                     |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <wr_en>         | high     |
     |     addrA          | connected to signal <wr_ptr>        |          |
     |     diA            | connected to signal <din>           |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 4-word x 20-bit                     |          |
+    |     aspect ratio   | 8-word x 22-bit                     |          |
     |     addrB          | connected to signal <rd_ptr>        |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 Unit <small_fifo_11> synthesized (advanced).
-
-Synthesizing (advanced) Unit <small_fifo_12>.
-INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 8-word x 22-bit                     |          |
-    |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <wr_en>         | high     |
-    |     addrA          | connected to signal <wr_ptr>        |          |
-    |     diA            | connected to signal <din>           |          |
-    -----------------------------------------------------------------------
-    | Port B                                                              |
-    |     aspect ratio   | 8-word x 22-bit                     |          |
-    |     addrB          | connected to signal <rd_ptr>        |          |
-    |     doB            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-Unit <small_fifo_12> synthesized (advanced).
 
 Synthesizing (advanced) Unit <small_fifo_2>.
 INFO:Xst - The RAM <Mram_queue> will be implemented as a BLOCK RAM, absorbing the following register(s): <dout>
@@ -7734,25 +6993,6 @@ INFO:Xst - The RAM <Mram_queue> will be implemented as a BLOCK RAM, absorbing th
 Unit <small_fifo_2> synthesized (advanced).
 
 Synthesizing (advanced) Unit <small_fifo_3>.
-INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 4-word x 72-bit                     |          |
-    |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <wr_en>         | high     |
-    |     addrA          | connected to signal <wr_ptr>        |          |
-    |     diA            | connected to signal <din>           |          |
-    -----------------------------------------------------------------------
-    | Port B                                                              |
-    |     aspect ratio   | 4-word x 72-bit                     |          |
-    |     addrB          | connected to signal <rd_ptr>        |          |
-    |     doB            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-Unit <small_fifo_3> synthesized (advanced).
-
-Synthesizing (advanced) Unit <small_fifo_4>.
 INFO:Xst - The RAM <Mram_queue> will be implemented as a BLOCK RAM, absorbing the following register(s): <dout>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
@@ -7777,9 +7017,9 @@ INFO:Xst - The RAM <Mram_queue> will be implemented as a BLOCK RAM, absorbing th
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-Unit <small_fifo_4> synthesized (advanced).
+Unit <small_fifo_3> synthesized (advanced).
 
-Synthesizing (advanced) Unit <small_fifo_5>.
+Synthesizing (advanced) Unit <small_fifo_4>.
 INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -7793,6 +7033,25 @@ INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to ma
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 8-word x 13-bit                     |          |
+    |     addrB          | connected to signal <rd_ptr>        |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <small_fifo_4> synthesized (advanced).
+
+Synthesizing (advanced) Unit <small_fifo_5>.
+INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 12-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <wr_en>         | high     |
+    |     addrA          | connected to signal <wr_ptr>        |          |
+    |     diA            | connected to signal <din>           |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 12-bit                     |          |
     |     addrB          | connected to signal <rd_ptr>        |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -7804,14 +7063,14 @@ INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to ma
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 8-word x 12-bit                     |          |
+    |     aspect ratio   | 4-word x 7-bit                      |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <wr_en>         | high     |
     |     addrA          | connected to signal <wr_ptr>        |          |
     |     diA            | connected to signal <din>           |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 8-word x 12-bit                     |          |
+    |     aspect ratio   | 4-word x 7-bit                      |          |
     |     addrB          | connected to signal <rd_ptr>        |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -7823,37 +7082,37 @@ INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to ma
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 4-word x 7-bit                      |          |
+    |     aspect ratio   | 4-word x 58-bit                     |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <wr_en>         | high     |
     |     addrA          | connected to signal <wr_ptr>        |          |
     |     diA            | connected to signal <din>           |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 4-word x 7-bit                      |          |
+    |     aspect ratio   | 4-word x 58-bit                     |          |
     |     addrB          | connected to signal <rd_ptr>        |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 Unit <small_fifo_7> synthesized (advanced).
 
-Synthesizing (advanced) Unit <small_fifo_8>.
+Synthesizing (advanced) Unit <small_fifo_9>.
 INFO:Xst - The small RAM <Mram_queue> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 4-word x 58-bit                     |          |
+    |     aspect ratio   | 4-word x 27-bit                     |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <wr_en>         | high     |
     |     addrA          | connected to signal <wr_ptr>        |          |
     |     diA            | connected to signal <din>           |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 4-word x 58-bit                     |          |
+    |     aspect ratio   | 4-word x 27-bit                     |          |
     |     addrB          | connected to signal <rd_ptr>        |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
-Unit <small_fifo_8> synthesized (advanced).
+Unit <small_fifo_9> synthesized (advanced).
 
 Synthesizing (advanced) Unit <unencoded_cam_lut_sm_1>.
 INFO:Xst - HDL ADVISOR - Asynchronous or synchronous initialization of the register <cam_wr_addr> prevents it from being combined with the RAM <Mram_lut> for implementation as read-only block RAM.
@@ -8106,8 +7365,8 @@ WARNING:Xst:2677 - Node <merge_wr_data_19> of sequential type is unconnected in 
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# FSMs                                                 : 13
-# RAMs                                                 : 55
+# FSMs                                                 : 12
+# RAMs                                                 : 54
  10x32-bit dual-port distributed RAM                   : 1
  13x32-bit single-port distributed RAM                 : 4
  17x32-bit single-port distributed RAM                 : 4
@@ -8119,7 +7378,7 @@ Macro Statistics
  4x27-bit dual-port distributed RAM                    : 1
  4x58-bit dual-port distributed RAM                    : 1
  4x7-bit dual-port distributed RAM                     : 1
- 4x72-bit dual-port distributed RAM                    : 9
+ 4x72-bit dual-port distributed RAM                    : 8
  6x32-bit single-port distributed RAM                  : 1
  8x12-bit dual-port distributed RAM                    : 4
  8x13-bit dual-port distributed RAM                    : 4
@@ -8130,11 +7389,10 @@ Macro Statistics
  8x35-bit dual-port distributed RAM                    : 1
  8x37-bit dual-port distributed RAM                    : 1
  8x72-bit dual-port block RAM                          : 1
-# ROMs                                                 : 6
+# ROMs                                                 : 5
  4x14-bit ROM                                          : 4
- 4x2-bit ROM                                           : 1
  64x32-bit ROM                                         : 1
-# Adders/Subtractors                                   : 141
+# Adders/Subtractors                                   : 140
  10-bit adder                                          : 2
  11-bit subtractor                                     : 2
  12-bit adder                                          : 5
@@ -8144,7 +7402,7 @@ Macro Statistics
  19-bit adder                                          : 12
  2-bit adder                                           : 5
  20-bit adder                                          : 6
- 3-bit adder                                           : 5
+ 3-bit adder                                           : 4
  3-bit addsub                                          : 16
  3-bit subtractor                                      : 1
  32-bit adder                                          : 24
@@ -8160,12 +7418,12 @@ Macro Statistics
  8-bit subtractor                                      : 2
  9-bit adder                                           : 13
  9-bit subtractor                                      : 1
-# Counters                                             : 129
+# Counters                                             : 126
  12-bit up counter                                     : 4
- 2-bit up counter                                      : 44
+ 2-bit up counter                                      : 42
  20-bit down counter                                   : 1
  3-bit up counter                                      : 25
- 3-bit updown counter                                  : 14
+ 3-bit updown counter                                  : 13
  32-bit up counter                                     : 1
  4-bit up counter                                      : 4
  4-bit updown counter                                  : 10
@@ -8180,11 +7438,9 @@ Macro Statistics
  12-bit up loadable accumulator                        : 18
  19-bit up accumulator                                 : 2
  3-bit up loadable accumulator                         : 10
-# Registers                                            : 13036
- Flip-Flops                                            : 13036
-# Latches                                              : 1
- 32-bit latch                                          : 1
-# Comparators                                          : 142
+# Registers                                            : 12750
+ Flip-Flops                                            : 12750
+# Comparators                                          : 140
  11-bit comparator lessequal                           : 2
  12-bit comparator greatequal                          : 4
  14-bit comparator equal                               : 4
@@ -8197,13 +7453,11 @@ Macro Statistics
  19-bit comparator less                                : 2
  19-bit comparator lessequal                           : 2
  2-bit comparator not equal                            : 1
- 22-bit comparator greatequal                          : 1
- 22-bit comparator less                                : 2
  3-bit comparator equal                                : 29
- 3-bit comparator greatequal                           : 28
+ 3-bit comparator greatequal                           : 26
  4-bit comparator equal                                : 4
- 4-bit comparator greatequal                           : 20
- 4-bit comparator less                                 : 1
+ 4-bit comparator greatequal                           : 21
+ 4-bit comparator less                                 : 3
  48-bit comparator equal                               : 1
  5-bit comparator less                                 : 4
  6-bit comparator greatequal                           : 3
@@ -8213,9 +7467,8 @@ Macro Statistics
  7-bit comparator not equal                            : 4
  8-bit comparator greater                              : 1
  9-bit comparator not equal                            : 4
-# Multiplexers                                         : 76
+# Multiplexers                                         : 44
  1-bit 16-to-1 multiplexer                             : 1
- 1-bit 3-to-1 multiplexer                              : 32
  1-bit 4-to-1 multiplexer                              : 2
  1-bit 8-to-1 multiplexer                              : 6
  13-bit 16-to-1 multiplexer                            : 4
@@ -8496,8 +7749,6 @@ Optimizing unit <nf2_top> ...
 
 Optimizing unit <regaddr_comparator> ...
 
-Optimizing unit <busmerge> ...
-
 Optimizing unit <nf2_reg_grp> ...
 
 Optimizing unit <reg_grp_1> ...
@@ -8524,21 +7775,21 @@ Optimizing unit <op_lut_process_sm> ...
 
 Optimizing unit <small_fifo_2> ...
 
-Optimizing unit <small_fifo_7> ...
+Optimizing unit <small_fifo_6> ...
 
 Optimizing unit <unencoded_cam_lut_sm_1> ...
 
 Optimizing unit <unencoded_cam_lut_sm_2> ...
 
-Optimizing unit <small_fifo_8> ...
+Optimizing unit <small_fifo_7> ...
 
 Optimizing unit <unencoded_cam_lut_sm_3> ...
+
+Optimizing unit <small_fifo_8> ...
 
 Optimizing unit <small_fifo_9> ...
 
 Optimizing unit <small_fifo_10> ...
-
-Optimizing unit <small_fifo_11> ...
 
 Optimizing unit <router_op_lut_regs_non_cntr> ...
 
@@ -8548,17 +7799,15 @@ Optimizing unit <PC_adder> ...
 
 Optimizing unit <PC_flipflop> ...
 
-Optimizing unit <small_fifo_3> ...
-
 Optimizing unit <generic_sw_regs> ...
 
 Optimizing unit <generic_hw_regs> ...
 
 Optimizing unit <store_pkt> ...
 
-Optimizing unit <small_fifo_12> ...
+Optimizing unit <small_fifo_11> ...
 
-Optimizing unit <small_fifo_4> ...
+Optimizing unit <small_fifo_3> ...
 
 Optimizing unit <oq_regs_ctrl> ...
 
@@ -8606,9 +7855,9 @@ Optimizing unit <CRC_chk> ...
 
 Optimizing unit <cpu_dma_queue_regs> ...
 
-Optimizing unit <small_fifo_5> ...
+Optimizing unit <small_fifo_4> ...
 
-Optimizing unit <small_fifo_6> ...
+Optimizing unit <small_fifo_5> ...
 
 Optimizing unit <rgmii_io_1> ...
 
@@ -8652,58 +7901,6 @@ Optimizing unit <FD16RE_MXILINX_reg_64bit_3> ...
 
 Optimizing unit <FD16RE_MXILINX_reg_64bit_4> ...
 
-Optimizing unit <FD8CE_MXILINX_reg9B> ...
-
-Optimizing unit <FD16CE_MXILINX_reg9B_1> ...
-
-Optimizing unit <FD16CE_MXILINX_reg9B_2> ...
-
-Optimizing unit <FD16CE_MXILINX_reg9B_3> ...
-
-Optimizing unit <FD16CE_MXILINX_reg9B_4> ...
-
-Optimizing unit <OR8_MXILINX_wordmatch> ...
-
-Optimizing unit <COMP8_MXILINX_comparator_1> ...
-
-Optimizing unit <COMP8_MXILINX_comparator_2> ...
-
-Optimizing unit <COMP8_MXILINX_comparator_3> ...
-
-Optimizing unit <COMP8_MXILINX_comparator_4> ...
-
-Optimizing unit <COMP8_MXILINX_comparator_5> ...
-
-Optimizing unit <COMP8_MXILINX_comparator_6> ...
-
-Optimizing unit <COMP8_MXILINX_comparator_7> ...
-
-Optimizing unit <AND7_MXILINX_comparator> ...
-
-Optimizing unit <FD8CE_MXILINX_dropfifo> ...
-
-Optimizing unit <COMP8_MXILINX_dropfifo_1> ...
-
-Optimizing unit <COMP8_MXILINX_dropfifo_2> ...
-
-Optimizing unit <M2_1_MXILINX_dropfifo> ...
-
-Optimizing unit <FTCE_MXILINX_dropfifo_1> ...
-
-Optimizing unit <FTCE_MXILINX_dropfifo_2> ...
-
-Optimizing unit <FTCE_MXILINX_dropfifo_3> ...
-
-Optimizing unit <FTCE_MXILINX_dropfifo_4> ...
-
-Optimizing unit <FTCE_MXILINX_dropfifo_5> ...
-
-Optimizing unit <FTCE_MXILINX_dropfifo_6> ...
-
-Optimizing unit <FTCE_MXILINX_dropfifo_7> ...
-
-Optimizing unit <FTCE_MXILINX_dropfifo_8> ...
-
 Optimizing unit <remove_pkt> ...
 
 Optimizing unit <sram_arbiter> ...
@@ -8714,6 +7911,8 @@ Optimizing unit <fallthrough_small_fifo_1> ...
 
 Optimizing unit <ip_lpm> ...
 
+Optimizing unit <fallthrough_small_fifo_5> ...
+
 Optimizing unit <fallthrough_small_fifo_6> ...
 
 Optimizing unit <fallthrough_small_fifo_7> ...
@@ -8722,19 +7921,15 @@ Optimizing unit <fallthrough_small_fifo_8> ...
 
 Optimizing unit <fallthrough_small_fifo_9> ...
 
-Optimizing unit <fallthrough_small_fifo_10> ...
-
 Optimizing unit <router_op_lut_regs_cntr> ...
-
-Optimizing unit <fallthrough_small_fifo_2> ...
-
-Optimizing unit <generic_regs> ...
 
 Optimizing unit <Program_Counter> ...
 
-Optimizing unit <fallthrough_small_fifo_3> ...
+Optimizing unit <generic_regs> ...
 
-Optimizing unit <fallthrough_small_fifo_11> ...
+Optimizing unit <fallthrough_small_fifo_2> ...
+
+Optimizing unit <fallthrough_small_fifo_10> ...
 
 Optimizing unit <oq_regs_generic_reg_grp_1> ...
 
@@ -8770,9 +7965,9 @@ Optimizing unit <rx_queue_3> ...
 
 Optimizing unit <rx_queue_4> ...
 
-Optimizing unit <fallthrough_small_fifo_4> ...
+Optimizing unit <fallthrough_small_fifo_3> ...
 
-Optimizing unit <fallthrough_small_fifo_5> ...
+Optimizing unit <fallthrough_small_fifo_4> ...
 
 Optimizing unit <reg_64bit> ...
 
@@ -8793,28 +7988,6 @@ Optimizing unit <M4_1E_MXILINX_mux_4x8bit_7> ...
 Optimizing unit <M4_1E_MXILINX_mux_4x8bit_8> ...
 
 Optimizing unit <mux_2x8bit> ...
-
-Optimizing unit <reg9B> ...
-
-Optimizing unit <comparator> ...
-
-Optimizing unit <CB8CE_MXILINX_dropfifo> ...
-
-Optimizing unit <FTCLEX_MXILINX_dropfifo_1> ...
-
-Optimizing unit <FTCLEX_MXILINX_dropfifo_2> ...
-
-Optimizing unit <FTCLEX_MXILINX_dropfifo_3> ...
-
-Optimizing unit <FTCLEX_MXILINX_dropfifo_4> ...
-
-Optimizing unit <FTCLEX_MXILINX_dropfifo_5> ...
-
-Optimizing unit <FTCLEX_MXILINX_dropfifo_6> ...
-
-Optimizing unit <FTCLEX_MXILINX_dropfifo_7> ...
-
-Optimizing unit <FTCLEX_MXILINX_dropfifo_8> ...
 
 Optimizing unit <eth_parser> ...
 
@@ -8850,10 +8023,6 @@ Optimizing unit <mux_2x64bit> ...
 
 Optimizing unit <mux_4x8bit> ...
 
-Optimizing unit <wordmatch> ...
-
-Optimizing unit <CB8CLE_MXILINX_dropfifo> ...
-
 Optimizing unit <nf2_dma> ...
 
 Optimizing unit <nf2_mac_grp_1> ...
@@ -8876,10 +8045,6 @@ Optimizing unit <output_port_lookup> ...
 
 Optimizing unit <oq_regs> ...
 
-Optimizing unit <detect7B> ...
-
-Optimizing unit <dropfifo> ...
-
 Optimizing unit <mux_4x64bit> ...
 
 Optimizing unit <output_queues> ...
@@ -8887,8 +8052,6 @@ Optimizing unit <output_queues> ...
 Optimizing unit <RegisterFile> ...
 
 Optimizing unit <processor> ...
-
-Optimizing unit <ids> ...
 
 Optimizing unit <user_data_path> ...
 
@@ -11830,7 +10993,7 @@ Changing polarity of register nf2_core/sram64.sram_arbiter/cnet_sram_sm/sram_tri
 Replicating register nf2_core/nf2_dma/nf2_dma_bus_fsm/dma_data_tri_en to handle IOB=TRUE attribute
 Changing polarity of register nf2_core/nf2_dma/nf2_dma_bus_fsm/dma_data_tri_en to handle IOB=TRUE attribute
 Changing polarity of register nf2_core/cpci_bus/cpci_data_tri_en to handle IOB=TRUE attribute
-Found area constraint ratio of 100 (+ 5) on block nf2_top, actual ratio is 58.
+Found area constraint ratio of 100 (+ 5) on block nf2_top, actual ratio is 57.
 INFO:Xst:2260 - The FF/Latch <nf2_core/sram64.sram_arbiter/sram_reg_access/wr_addr_0> in Unit <nf2_top> is equivalent to the following FF/Latch : <nf2_core/sram64.sram_arbiter/sram_reg_access/rd_addr_0> 
 INFO:Xst:2260 - The FF/Latch <nf2_core/sram64.sram_arbiter/sram_reg_access/wr_addr_1> in Unit <nf2_top> is equivalent to the following FF/Latch : <nf2_core/sram64.sram_arbiter/sram_reg_access/rd_addr_1> 
 INFO:Xst:2260 - The FF/Latch <nf2_core/sram64.sram_arbiter/sram_reg_access/wr_addr_2> in Unit <nf2_top> is equivalent to the following FF/Latch : <nf2_core/sram64.sram_arbiter/sram_reg_access/rd_addr_2> 
@@ -12144,8 +11307,8 @@ Unit <nf2_top> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 11600
- Flip-Flops                                            : 11600
+# Registers                                            : 11305
+ Flip-Flops                                            : 11305
 # Shift Registers                                      : 65
  2-bit shift register                                  : 27
  4-bit shift register                                  : 6
@@ -12178,50 +11341,41 @@ Design Statistics
 # IOs                              : 437
 
 Cell Usage :
-# BELS                             : 23893
-#      AND2                        : 332
-#      AND2B1                      : 265
-#      AND3                        : 260
-#      AND3B1                      : 257
-#      AND3B2                      : 1
-#      AND4                        : 136
-#      AND5                        : 2
-#      BUF                         : 7
+# BELS                             : 23088
+#      AND2                        : 260
+#      AND2B1                      : 256
+#      AND3                        : 256
+#      AND3B1                      : 256
+#      BUF                         : 8
 #      GND                         : 137
-#      INV                         : 750
+#      INV                         : 746
 #      LUT1                        : 275
-#      LUT2                        : 1886
-#      LUT3                        : 5160
-#      LUT4                        : 8226
+#      LUT2                        : 1838
+#      LUT3                        : 5140
+#      LUT4                        : 8216
 #      MULT_AND                    : 3
-#      MUXCY                       : 2110
-#      MUXF5                       : 1014
-#      MUXF6                       : 194
+#      MUXCY                       : 2118
+#      MUXF5                       : 1055
+#      MUXF6                       : 197
 #      MUXF7                       : 33
-#      OR2                         : 523
-#      OR2B1                       : 56
-#      OR4                         : 2
-#      VCC                         : 87
-#      XNOR2                       : 464
-#      XOR2                        : 16
+#      OR2                         : 512
+#      VCC                         : 85
 #      XORCY                       : 1697
-# FlipFlops/Latches                : 11698
-#      FD                          : 2182
-#      FDC                         : 626
-#      FDCE                        : 169
+# FlipFlops/Latches                : 11371
+#      FD                          : 2177
+#      FDC                         : 625
 #      FDDRRSE                     : 26
-#      FDE                         : 1795
+#      FDE                         : 1723
 #      FDP                         : 10
 #      FDPE                        : 256
-#      FDR                         : 2640
-#      FDRE                        : 3701
+#      FDR                         : 2634
+#      FDRE                        : 3660
 #      FDRS                        : 15
 #      FDRSE                       : 54
-#      FDS                         : 84
+#      FDS                         : 83
 #      FDSE                        : 108
-#      LD                          : 32
-# RAMS                             : 1297
-#      RAM16X1D                    : 982
+# RAMS                             : 1225
+#      RAM16X1D                    : 910
 #      RAM16X1S                    : 160
 #      RAM32X1S                    : 128
 #      RAMB16_S18_S18              : 2
@@ -12239,14 +11393,12 @@ Cell Usage :
 #      OBUFT                       : 4
 # DCMs                             : 6
 #      DCM                         : 6
-# Others                           : 55
+# Others                           : 35
 #      bram_cam_unencoded_32x32    : 2
 #      cdq_rx_fifo_512x36_to_72    : 4
 #      cdq_tx_fifo_256x72_to_36    : 4
-#      dmem                        : 1
-#      FMAP                        : 19
+#      data_mem                    : 1
 #      imem                        : 1
-#      my_ram                      : 1
 #      net2pci_16x32               : 1
 #      pci2net_16x60               : 1
 #      rxfifo_8kx9_to_72           : 4
@@ -12261,12 +11413,12 @@ Device utilization summary:
 
 Selected Device : 2vp50ff1152-7 
 
- Number of Slices:                    13097  out of  23616    55%  
- Number of Slice Flip Flops:          11219  out of  47232    23%  
- Number of 4 input LUTs:              18741  out of  47232    39%  
-    Number used as logic:             16297
+ Number of Slices:                    12716  out of  23616    53%  
+ Number of Slice Flip Flops:          10892  out of  47232    23%  
+ Number of 4 input LUTs:              18515  out of  47232    39%  
+    Number used as logic:             16215
     Number used as Shift registers:      64
-    Number used as RAMs:               2380
+    Number used as RAMs:               2236
  Number of IOs:                         437
  Number of bonded IOBs:                 360  out of    692    52%  
     IOB Flip Flops:                     479
@@ -12292,53 +11444,46 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
---------------------------------------------------------------------------------------------------------------+-------------------------------------------------+-------+
-Clock Signal                                                                                                  | Clock buffer(FF name)                           | Load  |
---------------------------------------------------------------------------------------------------------------+-------------------------------------------------+-------+
-gtx_clk                                                                                                       | RGMII_TX_DCM:CLK0                               | 512   |
-gtx_clk                                                                                                       | RGMII_TX_DCM:CLK90                              | 8     |
-rgmii_0_rxc                                                                                                   | RGMII_0_RX_DCM:CLK0                             | 167   |
-rgmii_1_rxc                                                                                                   | RGMII_1_RX_DCM:CLK0                             | 167   |
-rgmii_2_rxc                                                                                                   | RGMII_2_RX_DCM:CLK0                             | 167   |
-rgmii_3_rxc                                                                                                   | RGMII_3_RX_DCM:CLK0                             | 167   |
-core_clk                                                                                                      | CORE_DCM_CLK:CLK0                               | 11548 |
-nf2_core/user_data_path/ids/Mrom_core_state_rom00001(nf2_core/user_data_path/ids/Mrom_core_state_rom0000111:O)| NONE(*)(nf2_core/user_data_path/ids/check_low_0)| 32    |
-cpci_clk                                                                                                      | IBUFG+BUFGMUX                                   | 397   |
---------------------------------------------------------------------------------------------------------------+-------------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+gtx_clk                            | RGMII_TX_DCM:CLK0      | 512   |
+gtx_clk                            | RGMII_TX_DCM:CLK90     | 8     |
+rgmii_0_rxc                        | RGMII_0_RX_DCM:CLK0    | 167   |
+rgmii_1_rxc                        | RGMII_1_RX_DCM:CLK0    | 167   |
+rgmii_2_rxc                        | RGMII_2_RX_DCM:CLK0    | 167   |
+rgmii_3_rxc                        | RGMII_3_RX_DCM:CLK0    | 167   |
+core_clk                           | CORE_DCM_CLK:CLK0      | 11181 |
+cpci_clk                           | IBUFG+BUFGMUX          | 397   |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-------+
 Control Signal                                                                                                                               | Buffer(FF name)                                                                  | Load  |
 ---------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-------+
-reset(reset1:O)                                                                                                                              | NONE(rgmii_3_io/gmii_txd_rising_7)                                               | 180   |
-nf2_core/mac_groups[0].nf2_mac_grp/mac_grp_regs/reset_MAC(nf2_core/mac_groups[0].nf2_mac_grp/mac_grp_regs/reset_MAC_f5:O)                    | NONE(nf2_core/mac_groups[0].nf2_mac_grp/gig_eth_mac/mac_tx/tx_counter_6)         | 158   |
-nf2_core/mac_groups[1].nf2_mac_grp/mac_grp_regs/reset_MAC(nf2_core/mac_groups[1].nf2_mac_grp/mac_grp_regs/reset_MAC_f5:O)                    | NONE(nf2_core/mac_groups[1].nf2_mac_grp/gig_eth_mac/mac_tx/tx_crc_gen/CRC_reg_3) | 158   |
-nf2_core/mac_groups[2].nf2_mac_grp/mac_grp_regs/reset_MAC(nf2_core/mac_groups[2].nf2_mac_grp/mac_grp_regs/reset_MAC_f5:O)                    | NONE(nf2_core/mac_groups[2].nf2_mac_grp/gig_eth_mac/mac_tx/gmii_txd_out_reg_6)   | 158   |
-nf2_core/mac_groups[3].nf2_mac_grp/mac_grp_regs/reset_MAC(nf2_core/mac_groups[3].nf2_mac_grp/mac_grp_regs/reset_MAC_f5:O)                    | NONE(nf2_core/mac_groups[3].nf2_mac_grp/gig_eth_mac/mac_tx/tx_crc_gen/CRC_reg_14)| 158   |
-nf2_core/user_data_path/reset_2(nf2_core/user_data_path/reset_2:O)                                                                           | NONE(nf2_core/user_data_path/ids/drop_fifo/XLXI_6/I_Q3/I_36_35)                  | 97    |
-nf2_core/user_data_path/ids/matcher/XLXN_29(nf2_core/user_data_path/ids/matcher/XLXI_6:Q)                                                    | NONE(nf2_core/user_data_path/ids/matcher/XLXI_1/XLXI_2/I_Q12)                    | 73    |
-nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/wptr_full/wrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/wptr_full/wrst_n_inv1_INV_0:O)  | NONE(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/wptr_full/wbin_2)               | 10    |
-nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/wptr_full/wrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/wptr_full/wrst_n_inv1_INV_0:O)  | NONE(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/wptr_full/wbin_3)               | 10    |
+reset(reset1:O)                                                                                                                              | NONE(rgmii_2_io/rgmii_tx_ctl_rising)                                             | 180   |
+nf2_core/mac_groups[0].nf2_mac_grp/mac_grp_regs/reset_MAC(nf2_core/mac_groups[0].nf2_mac_grp/mac_grp_regs/reset_MAC_f5:O)                    | NONE(nf2_core/mac_groups[0].nf2_mac_grp/gig_eth_mac/mac_tx/tx_crc_gen/CRC_reg_28)| 158   |
+nf2_core/mac_groups[1].nf2_mac_grp/mac_grp_regs/reset_MAC(nf2_core/mac_groups[1].nf2_mac_grp/mac_grp_regs/reset_MAC_f5:O)                    | NONE(nf2_core/mac_groups[1].nf2_mac_grp/gig_eth_mac/mac_tx/tx_crc_gen/CRC_reg_5) | 158   |
+nf2_core/mac_groups[2].nf2_mac_grp/mac_grp_regs/reset_MAC(nf2_core/mac_groups[2].nf2_mac_grp/mac_grp_regs/reset_MAC_f5:O)                    | NONE(nf2_core/mac_groups[2].nf2_mac_grp/gig_eth_mac/mac_tx/tx_crc_gen/CRC_reg_14)| 158   |
+nf2_core/mac_groups[3].nf2_mac_grp/mac_grp_regs/reset_MAC(nf2_core/mac_groups[3].nf2_mac_grp/mac_grp_regs/reset_MAC_f5:O)                    | NONE(nf2_core/mac_groups[3].nf2_mac_grp/gig_eth_mac/mac_tx/tx_crc_gen/CRC_reg_2) | 158   |
+nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/wptr_full/wrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/wptr_full/wrst_n_inv1_INV_0:O)  | NONE(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/wptr_full/w_almost_full)        | 10    |
+nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/wptr_full/wrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/wptr_full/wrst_n_inv1_INV_0:O)  | NONE(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/wptr_full/w_almost_full)        | 10    |
 nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/rptr_empty/rrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/rptr_empty/rrst_n_inv1_INV_0:O)| NONE(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/rptr_empty/rbin_1)              | 9     |
-nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/rptr_empty/rrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/rptr_empty/rrst_n_inv1_INV_0:O)| NONE(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/rptr_empty/rptr_2)              | 9     |
-nf2_core/user_data_path/ids/Mrom_core_state_rom0000(nf2_core/user_data_path/ids/Mrom_core_state_rom000011:O)                                 | NONE(nf2_core/user_data_path/ids/CORE/XLXI_2/XLXI_2/next_PC_0)                   | 9     |
-nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_r2w/wrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_r2w/wrst_n_inv1_INV_0:O)    | NONE(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_r2w/wq1_rptr_2)            | 8     |
-nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_w2r/rrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_w2r/rrst_n_inv1_INV_0:O)    | NONE(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_w2r/rq2_wptr_0)            | 8     |
-nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_r2w/wrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_r2w/wrst_n_inv1_INV_0:O)    | NONE(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_r2w/wq1_rptr_3)            | 8     |
-nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_w2r/rrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_w2r/rrst_n_inv1_INV_0:O)    | NONE(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_w2r/rq1_wptr_2)            | 8     |
+nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/rptr_empty/rrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/rptr_empty/rrst_n_inv1_INV_0:O)| NONE(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/rptr_empty/rempty)              | 9     |
+nf2_core/user_data_path/reset_2(nf2_core/user_data_path/reset_2:O)                                                                           | NONE(nf2_core/user_data_path/processor/XLXI_2/XLXI_2/next_PC_8)                  | 9     |
+nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_r2w/wrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_r2w/wrst_n_inv1_INV_0:O)    | NONE(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_r2w/wq1_rptr_0)            | 8     |
+nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_w2r/rrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_w2r/rrst_n_inv1_INV_0:O)    | NONE(nf2_core/nf2_dma/nf2_dma_sync/rx_async_fifo/sync_w2r/rq1_wptr_3)            | 8     |
+nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_r2w/wrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_r2w/wrst_n_inv1_INV_0:O)    | NONE(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_r2w/wq1_rptr_1)            | 8     |
+nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_w2r/rrst_n_inv(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_w2r/rrst_n_inv1_INV_0:O)    | NONE(nf2_core/nf2_dma/nf2_dma_sync/tx_async_fifo/sync_w2r/rq1_wptr_0)            | 8     |
 ---------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -7
 
-   Minimum period: 8.386ns (Maximum Frequency: 119.241MHz)
-   Minimum input arrival time before clock: 10.008ns
+   Minimum period: 8.512ns (Maximum Frequency: 117.479MHz)
+   Minimum input arrival time before clock: 10.007ns
    Maximum output required time after clock: 4.276ns
    Maximum combinational path delay: 4.773ns
 
@@ -12543,10 +11688,10 @@ Delay:               7.145ns (Levels of Logic = 18)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'core_clk'
-  Clock period: 8.386ns (frequency: 119.241MHz)
-  Total number of paths / destination ports: 889807 / 25584
+  Clock period: 8.512ns (frequency: 117.479MHz)
+  Total number of paths / destination ports: 884413 / 24131
 -------------------------------------------------------------------------
-Delay:               8.386ns (Levels of Logic = 13)
+Delay:               8.512ns (Levels of Logic = 13)
   Source:            nf2_core/user_data_path/output_port_lookup/op_lut_process_sm/state_2 (FF)
   Destination:       nf2_core/user_data_path/output_port_lookup/input_fifo/fifo/depth_5 (FF)
   Source Clock:      core_clk rising
@@ -12558,11 +11703,11 @@ Delay:               8.386ns (Levels of Logic = 13)
     ----------------------------------------  ------------
      FD:C->Q              18   0.370   0.691  state_2 (state_2)
      LUT3:I1->O           11   0.275   0.539  out_data_next_or000111 (N67)
-     LUT3:I2->O            5   0.275   0.446  state_next_cmp_eq000011 (N108)
-     LUT3:I2->O            3   0.275   0.415  state_next_cmp_eq00041 (state_next_cmp_eq0004)
-     LUT4:I2->O            4   0.275   0.431  in_fifo_rd_en3 (N86)
-     LUT3:I2->O            1   0.275   0.350  in_fifo_rd_en_SW0_SW0_SW0 (N32)
-     LUT4:I2->O            3   0.275   0.415  in_fifo_rd_en (in_fifo_rd_en)
+     LUT3:I2->O            6   0.275   0.463  state_next_cmp_eq000011 (N108)
+     LUT3:I2->O           11   0.275   0.539  state_next_cmp_eq00001 (state_next_cmp_eq0000)
+     LUT3:I2->O            3   0.275   0.415  in_fifo_rd_en21 (N69)
+     LUT4:I2->O            1   0.275   0.350  in_fifo_rd_en_SW0 (N26)
+     LUT3:I2->O            3   0.275   0.415  in_fifo_rd_en (in_fifo_rd_en)
      end scope: 'op_lut_process_sm'
      begin scope: 'input_fifo'
      LUT3:I2->O           11   0.275   0.619  fifo_rd_en1 (fifo_rd_en)
@@ -12573,13 +11718,13 @@ Delay:               8.386ns (Levels of Logic = 13)
      MUXF5:I1->O           1   0.303   0.000  Result(5)_f5 (Result(5))
      FDRE:D                    0.208          depth_5
     ----------------------------------------
-    Total                      8.386ns (3.631ns logic, 4.755ns route)
-                                       (43.3% logic, 56.7% route)
+    Total                      8.512ns (3.631ns logic, 4.881ns route)
+                                       (42.7% logic, 57.3% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'cpci_clk'
   Clock period: 7.683ns (frequency: 130.159MHz)
-  Total number of paths / destination ports: 9002 / 562
+  Total number of paths / destination ports: 9094 / 562
 -------------------------------------------------------------------------
 Delay:               7.683ns (Levels of Logic = 15)
   Source:            nf2_core/nf2_dma/nf2_dma_bus_fsm/watchdog_timer_7 (FF)
@@ -12617,7 +11762,7 @@ Delay:               7.683ns (Levels of Logic = 15)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'gtx_clk'
   Total number of paths / destination ports: 184 / 124
 -------------------------------------------------------------------------
-Offset:              4.546ns (Levels of Logic = 6)
+Offset:              4.566ns (Levels of Logic = 6)
   Source:            nf2_core/mac_groups[3].nf2_mac_grp/tx_queue/tx_fifo_64.gmac_tx_fifo:dout(8) (PAD)
   Destination:       nf2_core/mac_groups[3].nf2_mac_grp/tx_queue/txf_num_pkts_waiting_6 (FF)
   Destination Clock: gtx_clk rising
@@ -12626,17 +11771,17 @@ Offset:              4.546ns (Levels of Logic = 6)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    txfifo_512x72_to_9:dout(8)    4   0.000   0.549  tx_fifo_64.gmac_tx_fifo (eop)
-     LUT4:I0->O           11   0.275   0.521  txf_num_pkts_waiting_mux0000(1)1 (N01)
-     MUXF5:S->O            2   0.539   0.396  Maddsub_txf_num_pkts_waiting_addsub0000_cy(2)1 (Maddsub_txf_num_pkts_waiting_addsub0000_cy(2))
-     LUT4:I2->O            2   0.275   0.396  Maddsub_txf_num_pkts_waiting_addsub0000_cy(3)11 (Maddsub_txf_num_pkts_waiting_addsub0000_cy(3))
-     LUT4:I2->O            3   0.275   0.533  txf_num_pkts_waiting_mux0000(5)11 (N5)
-     LUT4:I0->O            1   0.275   0.000  txf_num_pkts_waiting_mux0000(6)22 (txf_num_pkts_waiting_mux0000(6)21)
-     MUXF5:I0->O           1   0.303   0.000  txf_num_pkts_waiting_mux0000(6)2_f5 (txf_num_pkts_waiting_mux0000(6))
+    txfifo_512x72_to_9:dout(8)    4   0.000   0.431  tx_fifo_64.gmac_tx_fifo (eop)
+     LUT4:I2->O           11   0.275   0.521  txf_num_pkts_waiting_mux0000(1)1 (N01)
+     MUXF5:S->O            2   0.539   0.514  Maddsub_txf_num_pkts_waiting_addsub0000_cy(2)1 (Maddsub_txf_num_pkts_waiting_addsub0000_cy(2))
+     LUT4:I0->O            2   0.275   0.514  Maddsub_txf_num_pkts_waiting_addsub0000_cy(3)11 (Maddsub_txf_num_pkts_waiting_addsub0000_cy(3))
+     LUT4:I0->O            3   0.275   0.435  txf_num_pkts_waiting_mux0000(5)11 (N5)
+     LUT4:I3->O            1   0.275   0.000  txf_num_pkts_waiting_mux0000(6)21 (txf_num_pkts_waiting_mux0000(6)2)
+     MUXF5:I1->O           1   0.303   0.000  txf_num_pkts_waiting_mux0000(6)2_f5 (txf_num_pkts_waiting_mux0000(6))
      FDR:D                     0.208          txf_num_pkts_waiting_6
     ----------------------------------------
-    Total                      4.546ns (2.150ns logic, 2.396ns route)
-                                       (47.3% logic, 52.7% route)
+    Total                      4.566ns (2.150ns logic, 2.416ns route)
+                                       (47.1% logic, 52.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'rgmii_0_rxc'
@@ -12728,9 +11873,9 @@ Offset:              3.214ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'core_clk'
-  Total number of paths / destination ports: 78111 / 11019
+  Total number of paths / destination ports: 78316 / 11486
 -------------------------------------------------------------------------
-Offset:              10.008ns (Levels of Logic = 11)
+Offset:              10.007ns (Levels of Logic = 11)
   Source:            nf2_reset (PAD)
   Destination:       nf2_core/user_data_path/output_port_lookup/op_lut_regs/router_op_lut_regs_non_cntr/state_1 (FF)
   Destination Clock: core_clk rising
@@ -12742,7 +11887,7 @@ Offset:              10.008ns (Levels of Logic = 11)
      IBUF:I->O            14   0.878   0.650  nf2_reset_IBUF (_and0000)
      LUT2:I1->O          405   0.275   1.201  reset1_1 (reset1_1)
      begin scope: 'nf2_core/user_data_path'
-     BUF:I->O            445   0.275   1.258  reset_1 (reset_1)
+     BUF:I->O            444   0.275   1.257  reset_1 (reset_1)
      begin scope: 'output_port_lookup'
      BUF:I->O            438   0.275   1.248  reset_1 (reset_1)
      begin scope: 'op_lut_regs'
@@ -12754,29 +11899,8 @@ Offset:              10.008ns (Levels of Logic = 11)
      LUT4:I3->O            1   0.275   0.000  state_mux0000(6)174 (state_mux0000(6)1)
      FD:D                      0.208          state_1
     ----------------------------------------
-    Total                     10.008ns (3.286ns logic, 6.722ns route)
+    Total                     10.007ns (3.286ns logic, 6.721ns route)
                                        (32.8% logic, 67.2% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'nf2_core/user_data_path/ids/Mrom_core_state_rom00001'
-  Total number of paths / destination ports: 32 / 32
--------------------------------------------------------------------------
-Offset:              0.959ns (Levels of Logic = 2)
-  Source:            nf2_core/user_data_path/ids/CORE/XLXI_21:dout(0) (PAD)
-  Destination:       nf2_core/user_data_path/ids/check_low_0 (LATCH)
-  Destination Clock: nf2_core/user_data_path/ids/Mrom_core_state_rom00001 falling
-
-  Data Path: nf2_core/user_data_path/ids/CORE/XLXI_21:dout(0) to nf2_core/user_data_path/ids/check_low_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-    dmem:dout(0)           2   0.000   0.476  XLXI_21 (XLXN_96(0))
-     LUT2:I1->O            1   0.275   0.000  _AUX_85(0)1 (data_low(0))
-     end scope: 'CORE'
-     LD:D                      0.208          check_low_0
-    ----------------------------------------
-    Total                      0.959ns (0.483ns logic, 0.476ns route)
-                                       (50.4% logic, 49.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'cpci_clk'
@@ -12800,7 +11924,7 @@ Offset:              2.176ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'core_clk'
-  Total number of paths / destination ports: 2435 / 1364
+  Total number of paths / destination ports: 2594 / 1283
 -------------------------------------------------------------------------
 Offset:              4.276ns (Levels of Logic = 6)
   Source:            nf2_core/nf2_reg_grp_u/cpu_timeout_cnt_dn_3 (FF)
@@ -12971,7 +12095,7 @@ Offset:              3.849ns (Levels of Logic = 8)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 852 / 726
+  Total number of paths / destination ports: 851 / 725
 -------------------------------------------------------------------------
 Delay:               4.773ns (Levels of Logic = 3)
   Source:            nf2_reset (PAD)
@@ -12991,15 +12115,15 @@ Delay:               4.773ns (Levels of Logic = 3)
 =========================================================================
 
 
-Total REAL time to Xst completion: 185.00 secs
-Total CPU time to Xst completion: 156.33 secs
+Total REAL time to Xst completion: 201.00 secs
+Total CPU time to Xst completion: 169.19 secs
  
 --> 
 
 
-Total memory usage is 1162248 kilobytes
+Total memory usage is 1125448 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 3592 (   0 filtered)
-Number of infos    :  251 (   0 filtered)
+Number of warnings : 3582 (   0 filtered)
+Number of infos    :  249 (   0 filtered)
 

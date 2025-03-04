@@ -246,7 +246,7 @@ module processor
    wire [7:0] dmemaddr;
 
    // assign dmemaddr = (check[0]) ? lab6_addr[7:0] : R1_out_stg3[7:0];
-   assign dmemaddr = (imemaddr == 9'b111111111) ? lab6_addr[7:0] : R1_out_stg3[7:0];
+   assign dmemaddr = (check) ? lab6_addr[7:0] : R1_out_stg3[7:0];
    // assign {check_high, check_low} = ((check[0] == 1) && (imemaddr == 9'b111111111)) ? XLXN_96[63:0] : 64'hDEADDEADAAAAAAAA;
    assign check_high = XLXN_96[63:32];
    assign check_low = XLXN_96[31:0];
