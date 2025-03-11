@@ -27,17 +27,7 @@ Target Device                       : 2vp50ff1152-7
 *                        Optimizations                                  *
 =========================================================================
 ---- Statistics
-   Number of registers added by Replication                  | 2               
-
-   Overall change in number of registers                     | +2               
-
-
----- Details
-
-New or modified components                             | Optimization             | Objective           
--------------------------------------------------------|--------------------------|----------------------
-nf2_core/user_data_path/output_queues/remove_pkt/src_oq_0_REPLICA_2| Replication              | Fanout Optimization
-nf2_core/user_data_path/output_queues/remove_pkt/src_oq_1_REPLICA_1| Replication              | Fanout Optimization
+No sequential optimizations have been performed.
 
 
 

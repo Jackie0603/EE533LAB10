@@ -245,20 +245,30 @@ module processor
 
    wire [7:0] dmemaddr;
 
-   // assign dmemaddr = (check[0]) ? lab6_addr[7:0] : R1_out_stg3[7:0];
-   assign dmemaddr = (check) ? lab6_addr[7:0] : R1_out_stg3[7:0];
+   //assign dmemaddr = (check[0]) ? lab6_addr[7:0] : R1_out_stg3[7:0];
+   //assign dmemaddr = (check) ? lab6_addr[7:0] : 8'b00000000;
+   assign dmemaddr = (check[0] == 1'b1) ? lab6_addr[7:0] : R1_out_stg3;
    // assign {check_high, check_low} = ((check[0] == 1) && (imemaddr == 9'b111111111)) ? XLXN_96[63:0] : 64'hDEADDEADAAAAAAAA;
-   assign check_high = XLXN_96[63:32];
-   assign check_low = XLXN_96[31:0];
-   // assign data_hi = 32'h66666666;
+  // assign check_high = {XLXN_96[23:0], dmemaddr[7:0]};
+   //assign check_high = XLXN_96[31:0];
+   assign check_low = {XLXN_96[23:0], dmemaddr};
+   assign check_high = 32'h66666666;
    // assign data_low = 32'h77777777;
+
+   // data_mem XLXI_33 (.addra(dmemaddr), 
+   //                   .addrb(8'b00000000), 
+   //                   .clka(CLK), 
+   //                   .clkb(CLK), 
+   //                   .dinb(64'd0), 
+   //                  .web(1'b0), 
+   //                   .douta(XLXN_96[63:0]));
 
    data_mem XLXI_33 (.addra(dmemaddr), 
                      .addrb(R1_out_stg3[7:0]), 
                      .clka(CLK), 
                      .clkb(CLK), 
                      .dinb(R2_out_stg3[63:0]), 
-                     .web(WMemEn), 
+                     .web(1'b0), 
                      .douta(XLXN_96[63:0]));
 
    // dmem XLXI_21 (.addr(dmemaddr), 
