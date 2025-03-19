@@ -7,7 +7,7 @@
 	<nf:blocksize>64</nf:blocksize>
 	<nf:registers>
 		<nf:register>
-		  <nf:name>lab6_addr</nf:name>
+		  <nf:name>check_addr</nf:name>
 			<nf:description>Lab 6 address</nf:description>
 			<nf:type>generic_software32</nf:type>
 		</nf:register>

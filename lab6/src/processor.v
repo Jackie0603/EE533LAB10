@@ -169,7 +169,7 @@ module processor
 );
 
    // software registers
-   wire [31:0] lab6_addr;
+   wire [31:0] check_addr;
    wire [31:0] check;
    
    // hardware registers
@@ -247,12 +247,11 @@ module processor
 
    //assign dmemaddr = (check[0]) ? lab6_addr[7:0] : R1_out_stg3[7:0];
    //assign dmemaddr = (check) ? lab6_addr[7:0] : 8'b00000000;
-   assign dmemaddr = (check[0] == 1'b1) ? lab6_addr[7:0] : R1_out_stg3;
+   assign dmemaddr = (check[0] == 1'b1) ? check_addr[7:0] : R1_out_stg3;
    // assign {check_high, check_low} = ((check[0] == 1) && (imemaddr == 9'b111111111)) ? XLXN_96[63:0] : 64'hDEADDEADAAAAAAAA;
-  // assign check_high = {XLXN_96[23:0], dmemaddr[7:0]};
-   //assign check_high = XLXN_96[31:0];
-   assign check_low = {XLXN_96[23:0], dmemaddr};
-   assign check_high = 32'h66666666;
+  assign check_high = XLXN_96[31:0];
+   assign check_low = XLXN_96[63:32];
+   // assign check_high = 32'h66666666;
    // assign data_low = 32'h77777777;
 
    // data_mem XLXI_33 (.addra(dmemaddr), 
@@ -263,7 +262,7 @@ module processor
    //                  .web(1'b0), 
    //                   .douta(XLXN_96[63:0]));
 
-   data_mem XLXI_33 (.addra(dmemaddr), 
+   data_mem XLXI_33 (.addra(check_addr), 
                      .addrb(R1_out_stg3[7:0]), 
                      .clka(CLK), 
                      .clkb(CLK), 
@@ -330,7 +329,7 @@ module processor
       .counter_decrement(),
 
       // --- SW regs interface
-      .software_regs    ({lab6_addr, check}),
+      .software_regs    ({check, check_addr}),
 
       // --- HW regs interface
       .hardware_regs    ({check_high, check_low}),
