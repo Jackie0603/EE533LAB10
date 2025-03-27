@@ -1,0 +1,44 @@
+$date
+	Wed Mar 26 17:43:38 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module relu_fp16_tb $end
+$var wire 16 ! out [15:0] $end
+$var reg 16 " in [15:0] $end
+$scope module uut $end
+$var wire 16 # in [15:0] $end
+$var wire 16 $ out [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11100000000000 $
+b11100000000000 #
+b11100000000000 "
+b11100000000000 !
+$end
+#10000
+b0 !
+b0 $
+b1011100000000000 "
+b1011100000000000 #
+#20000
+b11110000000000 !
+b11110000000000 $
+b11110000000000 "
+b11110000000000 #
+#30000
+b0 !
+b0 $
+b1011110000000000 "
+b1011110000000000 #
+#40000
+b0 "
+b0 #
+#50000
